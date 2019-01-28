@@ -1,15 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="{{ app()->getLocale() }}">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Inversiones & Proyectos</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-     <!-- CSRF Token -->
-     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Favicon -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Inversiones</title>
     <link rel="shortcut icon" type="image/x-icon" href="./website/images/icons/favicon.png">
     <meta name="google-site-verification" content="0jKNPKU2Xq0Ou3fN5w8gTvPBfToqeoqFRq5QFCzu57E" />
     <!-- All css files are included here. -->
@@ -33,30 +28,12 @@
     <!-- Modernizr JS -->
     <script src="website/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Scripts -->
-    <script>
-        window.Laravel = <?php echo json_encode([
-                            'csrfToken' => csrf_token(),
-                        ]); ?>
-    </script>
-    @yield('css')
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
-
 <body>
-    <!-- Body main wrapper start -->
-    <div class="wrapper">
-        <div id="app">
-            @include('partials.header')
-            
-            @yield('content')
-       
-            <!-- Start footer area -->
-            @include('partials.footer')
-            <!-- End footer area -->
-        </div>
+    <div id="app">
+        <main-app/>
     </div>
-    
-    <!-- Scripts -->
-    
     <!-- jquery latest version -->
     <script src="website/js/vendor/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap framework js -->
@@ -70,9 +47,5 @@
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="website/js/main.js"></script>
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src='https://www.google.com/recaptcha/api.js'></script>
-    @yield('script')
-
 </body>
-
 </html>
