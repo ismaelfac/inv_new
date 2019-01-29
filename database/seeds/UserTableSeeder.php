@@ -27,57 +27,41 @@ class UserTableSeeder extends Seeder
                 'description' => 'Sin acceso al sistema',
                 'special' => 'no-access'
             ]);
-            Role::create([
+            $role = Role::create([
                 'name' => 'Auditor',
                 'slug' => 'auditor',
                 'description' => 'Puede ver o Generar reportes de los modulos',
                 'special' => null
             ]);
-            Role::create([
-                'name' => 'Clientes',
-                'slug' => 'clients',
-                'description' => 'Asignado a los clientes: <br> Permite: Crear clasificados, Inmuebles, editarlos',
-                'special' => null
-            ]);
-            Role::create([
+            $role->permissions()->sync([1, 2, 3, 4, 5, 10, 15, 24,25,26,27,29,30]);
+            $role = Role::create([
                 'name' => 'Asesores',
                 'slug' => 'consultants',
-                'description' => 'Asignado a los asesores: <br> Permite: Crear, actualizar desactivar inmuebles y clientes.',
+                'description' => 'Asignado a los asesores: <br> Permite: Crear, actualizar desactivar.',
                 'special' => null
             ]);
-
-            $user1 = User::create([
+            $role->permissions()->sync([1, 2, 3, 4, 5]);
+            $user = User::create([
                 'name' => 'ISMAEL E. LASTRE ALVAREZ',
                 'email' => 'ismaelfac@gmail.com',
                 'password' => bcrypt('BrwQ12-123'),
-                'entry' => 'portal',
-                'is_active' => 1
+                'active' => true
             ]);
-            $user1->roles()->sync(['1']); //update roles
-            $user2 = User::create([
-                'name' => 'ELIANA ROBLES',
-                'email' => 'directora@inversionesyproyectos.com',
-                'password' => bcrypt('Inversiones'),
-                'entry' => 'portal',
-                'is_active' => 1
+            $user->roles()->sync([1 => ['active' => true]]); //update roles
+            $user = User::create([
+                'name' => 'LILIA FERNANDEZ',
+                'email' => 'cartera@aliadosinmobiliariossa.com',
+                'password' => bcrypt('Lfernandez'),
+                'active' => true
             ]);
-            $user2->roles()->sync(['1']); //update roles
-            $user3 = User::create([
-                'name' => 'VALERIA VASQUEZ CUESTA',
-                'email' => 'vvasquez02@gmail.com',
+            $user->roles()->sync([1 => ['active' => true]]); //update roles
+            $user = User::create([
+                'name' => 'MARY FERNANDEZ',
+                'email' => 'auxcartera@aliadosinmobiliariossa.com',
                 'password' => bcrypt('BrwQ12-123'),
-                'entry' => 'portal',
-                'is_active' => 1
+                'active' => true
             ]);
-            $user3->roles()->sync(['3', '4']); //update roles
-            $user4 = User::create([
-                'name' => 'LILIANA MARTINEZ APARICIO',
-                'email' => 'lmartinez@gmail.com',
-                'password' => bcrypt('BrwQ12-123'),
-                'entry' => 'portal',
-                'is_active' => 0
-            ]);
-            $user4->roles()->sync(['4']); //update roles
+            $user->roles()->sync([3 => ['active' => true],4]); //update roles 3, 4 en usuario3
             DB::commit();
         } catch (\Throwable $th) {
             DB::rollBack();
