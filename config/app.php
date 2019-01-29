@@ -176,7 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Caffeinated\Shinobi\ShinobiServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-        Barryvdh\DomPDF\ServiceProvider::class,
+        Barryvdh\DomPDF\ServiceProvider::class,,
+        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
 
     ],
 
