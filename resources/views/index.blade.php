@@ -1,38 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Inversiones</title>
     <link rel="shortcut icon" type="image/x-icon" href="./website/images/icons/favicon.png">
-    <meta name="google-site-verification" content="0jKNPKU2Xq0Ou3fN5w8gTvPBfToqeoqFRq5QFCzu57E" />
+
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
-    <link rel="stylesheet" href="./website/css/bootstrap.min.css">
+    <link rel="stylesheet" href="website/css/bootstrap.min.css">
     <!-- nivo slider CSS -->
-    <link rel="stylesheet" href="./website/lib/css/nivo-slider.css"/>
+    <link rel="stylesheet" href="website/lib/css/nivo-slider.css"/>
     <!-- This core.css file contents all plugings css file. -->
-    <link rel="stylesheet" href="./website/css/core.css">
+    <link rel="stylesheet" href="website/css/core.css">
     <!-- Theme shortcodes/elements style -->
-    <link rel="stylesheet" href="./website/css/shortcode/shortcodes.css">
+    <link rel="stylesheet" href="website/css/shortcode/shortcodes.css">
     <!-- Theme main style -->
-    <link rel="stylesheet" href="./website/style.css">
+    <link rel="stylesheet" href="website/style.css">
     <!-- Responsive css -->
-    <link rel="stylesheet" href="./website/css/responsive.css">
+    <link rel="stylesheet" href="website/css/responsive.css">
     <!-- Template color css -->
-    <link href="./website/css/color/color-core.css" data-style="styles" rel="stylesheet">
+    <link href="website/css/color/color-core.css" data-style="styles" rel="stylesheet">
     <!-- User style -->
-    <link rel="stylesheet" href="./website/css/custom.css">
+    <link rel="stylesheet" href="website/css/custom.css">
 
     <!-- Modernizr JS -->
-    <script src="website/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="./website/js/vendor/modernizr-2.8.3.min.js"></script>
     <!-- Scripts -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div id="app">
-        <main-app/>
+    <div class="wrapper">
+        <div id="app">
+            <main-app/>
+        </div>
     </div>
     <!-- jquery latest version -->
     <script src="website/js/vendor/jquery-3.1.1.min.js"></script>
