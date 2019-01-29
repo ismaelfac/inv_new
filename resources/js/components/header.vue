@@ -81,7 +81,7 @@
                                         <router-link tag="li" to="/about" class="mega-parent"><a>Sobre Nosotros</a></router-link>
                                         <li><a href="#">Marca</a></li>
                                         <li><a href="#">Blog</a></li>
-                                        <li><a href="#">Portafolio</a></li>
+                                        <router-link tag="li" to="/properties" class="mega-parent"><a>Portafolio</a></router-link>
                                         <li><a href="#">Contacto</a></li>
                                     </ul>
                                 </nav>

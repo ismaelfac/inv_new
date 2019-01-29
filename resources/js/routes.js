@@ -10,6 +10,6 @@ export const routes=[
         path: '/about',
         component: About,
         props: true
-    },
+    }
 
 ]
