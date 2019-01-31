@@ -2,6 +2,7 @@
 
 namespace App\Modelsgenerals;
 
+use App\MethodsBase;
 use App\Modelsgenerals \{
     Departament, Municipality, Location
 };
@@ -10,7 +11,8 @@ use Illuminate\Support\Facades\Log;
 
 class Municipality extends Model
 {
-    //
+    use MethodsBase;
+
     protected $fillable = ['description', 'departament_id'];
     public $timestamps = false;
 
@@ -26,16 +28,10 @@ class Municipality extends Model
     {
         return route('municipality.show', $this->id);
     }
-    public static function getMunicipalityAttribute(string $municipality)
+    public static function factoryMunicipality($departament)
     {
-        try {
-            $municipality = Municipality::select('id')->where('description', strtoupper($municipality))->get();
-            $data = $municipality->toJson();
-            $data = json_decode($data);
-            return $data[0]->id;
-        } catch (Exception $e) {
-            Log::warning('Error al recibir el Municipio de wasi');
-        }
+        $result = Municipality::whereNotIn('id', [0, -1])->where('departament_id', $departament)->pluck('id')->all();
+        $response = self::randomFactory($result);
+        return $response;
     }
-
 }

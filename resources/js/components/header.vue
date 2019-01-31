@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div class="logo">
-                                <a href="#">
+                                <a href="index.html">
                                     <img src="website/images/logo/logo.png" alt="">
                                 </a>
                             </div>
@@ -43,21 +43,18 @@
                                         <li><a href="#">Registrarme</a></li>
                                     </template>
                                     <template v-else>
-                                       <nav id="primary-menu">
-                                        <ul class="main-menu text-center">
-                                            <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>{{ current_user.name}}
-                                                    <span class="caret"></span>
-                                                </a>
-                                                <ul class="drop-menu">
-                                                <li><a href="#" target="_blank">
-                                                    Panel Administrador <span class="caret"></span>
+                                        <nav id="primary-menu">
+                                            <ul class="main-menu text-center">
+                                                <li><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                                                    Ismael E. Lastre Alvarez
+                                                        <span class="caret"></span>
                                                     </a>
+                                                    <ul class="drop-menu">
+                                                        <li> <a href="#">Salir</a></li>
+                                                    </ul>
                                                 </li>
-                                                <li> <a href="#">Salir</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </nav>
+                                            </ul>
+                                        </nav>
                                     </template>
                                 </ul>
                             </div>
@@ -77,12 +74,12 @@
                                 </div>
                                 <nav id="primary-menu">
                                     <ul class="main-menu text-center">
-                                        <router-link tag="li" to="/" class="mega-parent"><a>Inicio</a></router-link>
-                                        <router-link tag="li" to="/about" class="mega-parent"><a>Sobre Nosotros</a></router-link>
-                                        <li><a href="#">Marca</a></li>
-                                        <li><a href="#">Blog</a></li>
-                                        <router-link tag="li" to="/properties" class="mega-parent"><a>Portafolio</a></router-link>
-                                        <li><a href="#">Contacto</a></li>
+                                        <router-link tag="li" to="/" exact><a>Inicio</a></router-link>
+                                        <router-link tag="li" to="about"><a>Sobre Nosotros</a></router-link>
+                                        <router-link tag="li" to="/"><a>Marca</a></router-link>
+                                        <router-link tag="li" to="/"><a>Blog</a></router-link>
+                                        <router-link tag="li" to="/"><a>Portafolio</a></router-link>
+                                        <router-link tag="li" to="/"><a>Contacto</a></router-link>
                                     </ul>
                                 </nav>
                             </div>
@@ -101,12 +98,12 @@
                         <div class="mobile-menu">
                             <nav id="dropdown">
                                 <ul>
-                                    <li><a href="#">Inicio</a></li>
-                                    <li><a href="#">Sobre Nosotros</a></li>
-                                    <li><a href="#">Marca</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Portafolio</a></li>
-                                    <li><a href="#">Contacto</a></li>                  
+                                    <router-link tag="li" to="/" exact><a>Inicio</a></router-link>
+                                    <router-link tag="li" to="about"><a>Sobre Nosotros</a></router-link>
+                                    <router-link tag="li" to="/"><a>Marca</a></router-link>
+                                    <router-link tag="li" to="/"><a>Blog</a></router-link>
+                                    <router-link tag="li" to="/"><a>Portafolio</a></router-link>
+                                    <router-link tag="li" to="/"><a>Contacto</a></router-link>         
                                 </ul>
                             </nav>
                         </div>

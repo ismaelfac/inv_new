@@ -2,6 +2,7 @@
 
 namespace App\Modelsgenerals;
 
+use App\MethodsBase;
 use App\Modelsgenerals \{
     Country, Municipality
 };
@@ -10,7 +11,8 @@ use Illuminate\Support\Facades\Log;
 
 class Departament extends Model
 {
-    //
+    use MethodsBase;
+
     protected $fillable = ['description', 'short_name', 'country_id'];
     public $timestamps = false;
 
@@ -22,15 +24,11 @@ class Departament extends Model
     {
         return $this->hasMany(Municipality::class);
     }
-    public static function getDepartamentAttribute(string $departament)
+    public static function factoryDepartament()
     {
-        try {
-            $result = Departament::select('id')->where('description', strtoupper($departament))->get();
-            $data = $result->toJson();
-            $data = json_decode($data);
-            return $data[0]->id;
-        } catch (Exception $e) {
-            Log::warning('Error al recibir el Departamento de wasi');
-        }
+        $result = Departament::whereNotIn('id', [0, -1])->where('country_id', 45)->pluck('id')->all();
+        $response = self::randomFactory($result);
+        return $response;
     }
+
 }

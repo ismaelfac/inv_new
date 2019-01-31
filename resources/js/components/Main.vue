@@ -16,6 +16,7 @@
     <!-- Body main wrapper end -->
     
 </template>
+<script></script>
 <script>
 import Header from './header'
 import Footer from './footer'

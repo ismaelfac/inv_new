@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Inversiones</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./website/images/icons/favicon.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon.png">
 
     <!-- All css files are included here. -->
     <!-- Bootstrap fremwork main css -->
@@ -27,8 +30,6 @@
 
     <!-- Modernizr JS -->
     <script src="./website/js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- Scripts -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
     <div class="wrapper">
@@ -36,6 +37,7 @@
             <main-app/>
         </div>
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
     <!-- jquery latest version -->
     <script src="website/js/vendor/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap framework js -->
@@ -48,6 +50,7 @@
     <script src="website/js/plugins.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="website/js/main.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    
+    
 </body>
 </html>
