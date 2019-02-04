@@ -203,8 +203,7 @@ module.exports = g;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(3);
-module.exports = __webpack_require__(35);
+module.exports = __webpack_require__(3);
 
 
 /***/ }),
@@ -218,8 +217,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue_router__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__routes__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Main_vue__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Main_vue__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_Main_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__components_Main_vue__);
+
 
 
 
@@ -234,7 +234,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
     mode: 'history'
 });
 
-var inv = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
+new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
     router: router,
     components: {
@@ -15241,8 +15241,11 @@ var index_esm = {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__components_auth_login_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__components_auth_login_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_content_vue__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_content_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_content_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_website_about_vue__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_website_about_vue__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_website_about_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_website_about_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_properties_client_Details_vue__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_properties_client_Details_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__components_properties_client_Details_vue__);
+
 
 
 
@@ -15256,6 +15259,10 @@ var routes = [{
 }, {
     path: '/about',
     component: __WEBPACK_IMPORTED_MODULE_2__components_website_about_vue___default.a,
+    props: true
+}, {
+    path: '/properties/:id',
+    component: __WEBPACK_IMPORTED_MODULE_3__components_properties_client_Details_vue___default.a,
     props: true
 }];
 
@@ -15345,7 +15352,7 @@ exports = module.exports = __webpack_require__(14)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -15744,8 +15751,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -15812,158 +15817,152 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "section",
-    { staticClass: "page-wrapper", attrs: { id: "page-content" } },
-    [
-      _c("div", { staticClass: "contact-area pt-115" }, [
-        _c("div", { staticClass: "container" }, [
-          _c("div", { staticClass: "row" }, [
-            _vm._m(0),
-            _vm._v(" "),
-            _c("div", { staticClass: "col-sm-7 col-xs-12" }, [
-              _c("div", { staticClass: "contact-messge" }, [
-                _c("div", { staticClass: "leave-review" }, [
-                  _c("h3", [_vm._v("INGRESO AL SISTEMA")]),
-                  _vm._v(" "),
-                  _c(
-                    "form",
-                    {
-                      attrs: { id: "login-form" },
-                      on: {
-                        submit: function($event) {
-                          $event.preventDefault()
-                          return _vm.authenticate($event)
-                        }
+  return _c("div", { staticClass: "login row justify-content-center" }, [
+    _c("div", { staticClass: "col-md-8" }, [
+      _c("div", { staticClass: "card" }, [
+        _c("div", { staticClass: "card-body" }, [
+          _c(
+            "form",
+            {
+              on: {
+                submit: function($event) {
+                  $event.preventDefault()
+                  return _vm.authenticate($event)
+                }
+              }
+            },
+            [
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-md-4 col-form-label text-md-right",
+                    attrs: { for: "email" }
+                  },
+                  [_vm._v("Email")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.email,
+                        expression: "form.email"
                       }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "email",
+                      name: "email",
+                      required: "",
+                      autofocus: ""
                     },
-                    [
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.email,
-                            expression: "form.email"
-                          }
-                        ],
-                        attrs: {
-                          type: "email",
-                          name: "email",
-                          placeholder: "Correo Electronico",
-                          required: "",
-                          autofocus: ""
-                        },
-                        domProps: { value: _vm.form.email },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "email", $event.target.value)
-                          }
+                    domProps: { value: _vm.form.email },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
-                      }),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.password,
-                            expression: "form.password"
-                          }
-                        ],
-                        attrs: {
-                          type: "password",
-                          name: "password",
-                          placeholder: "Contraseña",
-                          required: ""
-                        },
-                        domProps: { value: _vm.form.password },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "password", $event.target.value)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "submit-btn-1",
-                          attrs: { type: "submit" }
-                        },
-                        [_vm._v("Ingresar")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "form-messege mb-0" })
+                        _vm.$set(_vm.form, "email", $event.target.value)
+                      }
+                    }
+                  })
                 ])
-              ])
-            ])
-          ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group row" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass: "col-md-4 col-form-label text-md-right",
+                    attrs: { for: "password" }
+                  },
+                  [_vm._v("Password")]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-6" }, [
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.password,
+                        expression: "form.password"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "password", name: "password", required: "" },
+                    domProps: { value: _vm.form.password },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "password", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
+              _vm._m(1)
+            ]
+          )
         ])
       ])
-    ]
-  )
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-sm-5 col-xs-12" }, [
-      _c("div", { staticClass: "get-in-toch" }, [
-        _c("div", { staticClass: "section-title mb-30" }, [
-          _c("h3", [_vm._v("INVERSIONES")]),
+    return _c("div", { staticClass: "form-group row" }, [
+      _c("div", { staticClass: "col-md-6 offset-md-4" }, [
+        _c("div", { staticClass: "form-check" }, [
+          _c("input", {
+            staticClass: "form-check-input",
+            attrs: { type: "checkbox", name: "remember", id: "remember" }
+          }),
           _vm._v(" "),
-          _c("h2", [_vm._v("& PROYECTOS")])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "contact-desc mb-50" }, [
-          _c("p", { staticClass: "justify" }, [
-            _c(
-              "span",
-              {
-                staticClass: "tooltip-content",
-                attrs: {
-                  "data-placement": "top",
-                  "data-toggle": "tooltip",
-                  "data-original-title": "The name you can trust"
-                }
-              },
-              [_vm._v("Importante")]
-            ),
+          _c(
+            "label",
+            { staticClass: "form-check-label", attrs: { for: "remember" } },
+            [
+              _vm._v(
+                "\n                                    Remember Me\n                                "
+              )
+            ]
+          )
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group row mb-0" }, [
+      _c("div", { staticClass: "col-md-8 offset-md-4" }, [
+        _c(
+          "button",
+          { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+          [
             _vm._v(
-              " INVERSIONES & PROYECTOS con domicilio en la ciudad de Barranquilla-Colombia; como RESPONSABLE DEL TRATAMIENTO DE SUS DATOS PERSONALES, en cumplimiento de la ley le invita a conocer nuestra politica de "
-            ),
-            _c("b", [_vm._v("HABEAS DATA.")])
-          ])
-        ]),
+              "\n                                Login\n                            "
+            )
+          ]
+        ),
         _vm._v(" "),
-        _c("ul", { staticClass: "contact-address" }, [
-          _c("li", [
-            _c("div", { staticClass: "contact-address-icon" }, [
-              _c("img", {
-                attrs: { src: "images/icons/location-2.png", alt: "" }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "contact-address-info" }, [
-              _c("span", [_vm._v("Inquietudes ")]),
-              _vm._v(" "),
-              _c("span", [
-                _c("button", { staticClass: "btn btn-primary" }, [
-                  _vm._v("Quejas y reclamos")
-                ])
-              ])
-            ])
-          ])
+        _c("a", { staticClass: "btn btn-link", attrs: { href: "" } }, [
+          _vm._v(
+            "\n                                    No recuerdo mi clave?\n                                "
+          )
         ])
       ])
     ])
@@ -15987,7 +15986,7 @@ var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(21)
 /* template */
-var __vue_template__ = __webpack_require__(22)
+var __vue_template__ = __webpack_require__(25)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16031,10 +16030,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__properties_client_properties_vue__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__properties_client_properties_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__properties_client_properties_vue__);
 //
 //
 //
@@ -16204,420 +16201,1442 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-    name: 'content'
+    name: 'content',
+    components: {
+        'properties-app': __WEBPACK_IMPORTED_MODULE_0__properties_client_properties_vue___default.a
+    }
 });
 
 /***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(23)
+/* template */
+var __vue_template__ = __webpack_require__(24)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/properties_client/properties.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-34adda36", Component.options)
+  } else {
+    hotAPI.reload("data-v-34adda36", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__List_vue__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__List_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__List_vue__);
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'properties',
+    components: {
+        'list-properties': __WEBPACK_IMPORTED_MODULE_0__List_vue___default.a
+    },
+    data: function data() {
+        return {
+            properties: [{
+                "id_property": 906433,
+                "id_company": 2426798,
+                "id_user": "24392",
+                "for_sale": true,
+                "for_rent": false,
+                "for_transfer": false,
+                "id_property_type": "1",
+                "id_country": "1",
+                "country_label": "Colombia",
+                "id_region": "4",
+                "region_label": "Atlántico",
+                "id_city": "82",
+                "city_label": "Barranquilla",
+                "id_location": 0,
+                "location_label": "",
+                "id_zone": "96589",
+                "zone_label": "Prado",
+                "id_currency": "1",
+                "iso_currency": "COP",
+                "name_currency": "Pesos Colombianos",
+                "title": "CASA COMERCIAL ESQUINA",
+                "address": "Carrera 55 #74-02, barrio El Prado",
+                "area": "487",
+                "id_unit_area": "1",
+                "unit_area_label": "M2",
+                "built_area": "270",
+                "id_unit_built_area": "1",
+                "unit_built_area_label": "M2",
+                "private_area": "270",
+                "id_unit_private_area": "1",
+                "unit_private_area_label": "M2",
+                "maintenance_fee": "0",
+                "sale_price": "0",
+                "sale_price_label": "$0",
+                "rent_price": "8000000",
+                "rent_price_label": "$8.000.000",
+                "bedrooms": "5",
+                "bathrooms": "5",
+                "garages": "1",
+                "floor": "",
+                "stratum": "5",
+                "observations": "<p>Excelente casa comercial de esquina, ubicada en el sector corporativo y financiero de mayor proyecci&oacute;n en la ciudad de Baranquilla.&nbsp; La casa tiene uso comercial autorizado&nbsp; actividades de comercializacion de bienes y servicios, cuenta con 9 parqueaderos propios para visitantes.&nbsp; La negociaci&oacute;n es directa con el propietario.</p>\n",
+                "video": "",
+                "id_property_condition": "2",
+                "property_condition_label": "Used",
+                "id_status_on_page": "1",
+                "status_on_page_label": "Active",
+                "map": "11.000807166615152,-74.80189561843873",
+                "latitude": "11.000807166615152",
+                "longitude": "-74.80189561843873",
+                "building_date": "",
+                "network_share": true,
+                "visits": "6",
+                "created_at": "2018-10-29 12:34:58",
+                "updated_at": "2018-11-13 16:42:42",
+                "reference": "",
+                "comment": "",
+                "id_rents_type": "4",
+                "rents_type_label": "Monthly",
+                "zip_code": "",
+                "id_availability": "1",
+                "availability_label": "Available",
+                "id_publish_on_map": "3",
+                "publish_on_map_label": "Post exact point",
+                "label": "",
+                "label_color": "",
+                "owner": "own",
+                "main_image": {
+                    "id_gallery": "730529",
+                    "id_image": 29558978,
+                    "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                    "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                    "description": "",
+                    "position": "1"
+                },
+                "galleries": [{
+                    "0": {
+                        "id": 29558978,
+                        "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                        "description": "",
+                        "position": "1"
+                    },
+                    "1": {
+                        "id": 29558979,
+                        "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
+                        "description": "",
+                        "position": "2"
+                    },
+                    "2": {
+                        "id": 29558980,
+                        "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
+                        "description": "",
+                        "position": "3"
+                    },
+                    "3": {
+                        "id": 29558981,
+                        "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
+                        "description": "",
+                        "position": "4"
+                    },
+                    "4": {
+                        "id": 29558982,
+                        "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
+                        "description": "",
+                        "position": "5"
+                    },
+                    "5": {
+                        "id": 29558983,
+                        "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
+                        "description": "",
+                        "position": "6"
+                    },
+                    "6": {
+                        "id": 29558984,
+                        "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
+                        "description": "",
+                        "position": "7"
+                    },
+                    "7": {
+                        "id": 29558985,
+                        "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
+                        "description": "",
+                        "position": "8"
+                    },
+                    "8": {
+                        "id": 29558986,
+                        "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
+                        "description": "",
+                        "position": "9"
+                    },
+                    "id": 730529
+                }],
+                "features": {
+                    "internal": [],
+                    "external": [{
+                        "id": 40,
+                        "nombre": "Terraza",
+                        "name": ""
+                    }, {
+                        "id": 67,
+                        "nombre": "Zona comercial",
+                        "name": ""
+                    }]
+                }
+            }, {
+                "id_property": 906433,
+                "id_company": 2426798,
+                "id_user": "24392",
+                "for_sale": false,
+                "for_rent": true,
+                "for_transfer": false,
+                "id_property_type": "1",
+                "id_country": "1",
+                "country_label": "Colombia",
+                "id_region": "4",
+                "region_label": "Atlántico",
+                "id_city": "82",
+                "city_label": "Barranquilla",
+                "id_location": 0,
+                "location_label": "",
+                "id_zone": "96589",
+                "zone_label": "Prado",
+                "id_currency": "1",
+                "iso_currency": "COP",
+                "name_currency": "Pesos Colombianos",
+                "title": "CASA COMERCIAL ESQUINA",
+                "address": "Carrera 55 #74-02, barrio El Prado",
+                "area": "487",
+                "id_unit_area": "1",
+                "unit_area_label": "M2",
+                "built_area": "270",
+                "id_unit_built_area": "1",
+                "unit_built_area_label": "M2",
+                "private_area": "270",
+                "id_unit_private_area": "1",
+                "unit_private_area_label": "M2",
+                "maintenance_fee": "0",
+                "sale_price": "0",
+                "sale_price_label": "$0",
+                "rent_price": "8000000",
+                "rent_price_label": "$8.000.000",
+                "bedrooms": "5",
+                "bathrooms": "5",
+                "garages": "1",
+                "floor": "",
+                "stratum": "5",
+                "observations": "<p>Excelente casa comercial de esquina, ubicada en el sector corporativo y financiero de mayor proyecci&oacute;n en la ciudad de Baranquilla.&nbsp; La casa tiene uso comercial autorizado&nbsp; actividades de comercializacion de bienes y servicios, cuenta con 9 parqueaderos propios para visitantes.&nbsp; La negociaci&oacute;n es directa con el propietario.</p>\n",
+                "video": "",
+                "id_property_condition": "2",
+                "property_condition_label": "Used",
+                "id_status_on_page": "1",
+                "status_on_page_label": "Active",
+                "map": "11.000807166615152,-74.80189561843873",
+                "latitude": "11.000807166615152",
+                "longitude": "-74.80189561843873",
+                "building_date": "",
+                "network_share": true,
+                "visits": "6",
+                "created_at": "2018-10-29 12:34:58",
+                "updated_at": "2018-11-13 16:42:42",
+                "reference": "",
+                "comment": "",
+                "id_rents_type": "4",
+                "rents_type_label": "Monthly",
+                "zip_code": "",
+                "id_availability": "1",
+                "availability_label": "Available",
+                "id_publish_on_map": "3",
+                "publish_on_map_label": "Post exact point",
+                "label": "",
+                "label_color": "",
+                "owner": "own",
+                "main_image": {
+                    "id_gallery": "730529",
+                    "id_image": 29558978,
+                    "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                    "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                    "description": "",
+                    "position": "1"
+                },
+                "galleries": [{
+                    "0": {
+                        "id": 29558978,
+                        "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                        "description": "",
+                        "position": "1"
+                    },
+                    "1": {
+                        "id": 29558979,
+                        "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
+                        "description": "",
+                        "position": "2"
+                    },
+                    "2": {
+                        "id": 29558980,
+                        "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
+                        "description": "",
+                        "position": "3"
+                    },
+                    "3": {
+                        "id": 29558981,
+                        "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
+                        "description": "",
+                        "position": "4"
+                    },
+                    "4": {
+                        "id": 29558982,
+                        "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
+                        "description": "",
+                        "position": "5"
+                    },
+                    "5": {
+                        "id": 29558983,
+                        "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
+                        "description": "",
+                        "position": "6"
+                    },
+                    "6": {
+                        "id": 29558984,
+                        "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
+                        "description": "",
+                        "position": "7"
+                    },
+                    "7": {
+                        "id": 29558985,
+                        "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
+                        "description": "",
+                        "position": "8"
+                    },
+                    "8": {
+                        "id": 29558986,
+                        "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
+                        "description": "",
+                        "position": "9"
+                    },
+                    "id": 730529
+                }],
+                "features": {
+                    "internal": [],
+                    "external": [{
+                        "id": 40,
+                        "nombre": "Terraza",
+                        "name": ""
+                    }, {
+                        "id": 67,
+                        "nombre": "Zona comercial",
+                        "name": ""
+                    }]
+                }
+            }, {
+                "id_property": 906433,
+                "id_company": 2426798,
+                "id_user": "24392",
+                "for_sale": false,
+                "for_rent": true,
+                "for_transfer": false,
+                "id_property_type": "1",
+                "id_country": "1",
+                "country_label": "Colombia",
+                "id_region": "4",
+                "region_label": "Atlántico",
+                "id_city": "82",
+                "city_label": "Barranquilla",
+                "id_location": 0,
+                "location_label": "",
+                "id_zone": "96589",
+                "zone_label": "Prado",
+                "id_currency": "1",
+                "iso_currency": "COP",
+                "name_currency": "Pesos Colombianos",
+                "title": "CASA COMERCIAL ESQUINA",
+                "address": "Carrera 55 #74-02, barrio El Prado",
+                "area": "487",
+                "id_unit_area": "1",
+                "unit_area_label": "M2",
+                "built_area": "270",
+                "id_unit_built_area": "1",
+                "unit_built_area_label": "M2",
+                "private_area": "270",
+                "id_unit_private_area": "1",
+                "unit_private_area_label": "M2",
+                "maintenance_fee": "0",
+                "sale_price": "0",
+                "sale_price_label": "$0",
+                "rent_price": "8000000",
+                "rent_price_label": "$8.000.000",
+                "bedrooms": "5",
+                "bathrooms": "5",
+                "garages": "1",
+                "floor": "",
+                "stratum": "5",
+                "observations": "<p>Excelente casa comercial de esquina, ubicada en el sector corporativo y financiero de mayor proyecci&oacute;n en la ciudad de Baranquilla.&nbsp; La casa tiene uso comercial autorizado&nbsp; actividades de comercializacion de bienes y servicios, cuenta con 9 parqueaderos propios para visitantes.&nbsp; La negociaci&oacute;n es directa con el propietario.</p>\n",
+                "video": "",
+                "id_property_condition": "2",
+                "property_condition_label": "Used",
+                "id_status_on_page": "1",
+                "status_on_page_label": "Active",
+                "map": "11.000807166615152,-74.80189561843873",
+                "latitude": "11.000807166615152",
+                "longitude": "-74.80189561843873",
+                "building_date": "",
+                "network_share": true,
+                "visits": "6",
+                "created_at": "2018-10-29 12:34:58",
+                "updated_at": "2018-11-13 16:42:42",
+                "reference": "",
+                "comment": "",
+                "id_rents_type": "4",
+                "rents_type_label": "Monthly",
+                "zip_code": "",
+                "id_availability": "1",
+                "availability_label": "Available",
+                "id_publish_on_map": "3",
+                "publish_on_map_label": "Post exact point",
+                "label": "",
+                "label_color": "",
+                "owner": "own",
+                "main_image": {
+                    "id_gallery": "730529",
+                    "id_image": 29558978,
+                    "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                    "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                    "description": "",
+                    "position": "1"
+                },
+                "galleries": [{
+                    "0": {
+                        "id": 29558978,
+                        "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                        "description": "",
+                        "position": "1"
+                    },
+                    "1": {
+                        "id": 29558979,
+                        "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
+                        "description": "",
+                        "position": "2"
+                    },
+                    "2": {
+                        "id": 29558980,
+                        "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
+                        "description": "",
+                        "position": "3"
+                    },
+                    "3": {
+                        "id": 29558981,
+                        "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
+                        "description": "",
+                        "position": "4"
+                    },
+                    "4": {
+                        "id": 29558982,
+                        "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
+                        "description": "",
+                        "position": "5"
+                    },
+                    "5": {
+                        "id": 29558983,
+                        "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
+                        "description": "",
+                        "position": "6"
+                    },
+                    "6": {
+                        "id": 29558984,
+                        "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
+                        "description": "",
+                        "position": "7"
+                    },
+                    "7": {
+                        "id": 29558985,
+                        "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
+                        "description": "",
+                        "position": "8"
+                    },
+                    "8": {
+                        "id": 29558986,
+                        "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
+                        "description": "",
+                        "position": "9"
+                    },
+                    "id": 730529
+                }],
+                "features": {
+                    "internal": [],
+                    "external": [{
+                        "id": 40,
+                        "nombre": "Terraza",
+                        "name": ""
+                    }, {
+                        "id": 67,
+                        "nombre": "Zona comercial",
+                        "name": ""
+                    }]
+                }
+            }, {
+                "id_property": 906433,
+                "id_company": 2426798,
+                "id_user": "24392",
+                "for_sale": false,
+                "for_rent": true,
+                "for_transfer": false,
+                "id_property_type": "1",
+                "id_country": "1",
+                "country_label": "Colombia",
+                "id_region": "4",
+                "region_label": "Atlántico",
+                "id_city": "82",
+                "city_label": "Barranquilla",
+                "id_location": 0,
+                "location_label": "",
+                "id_zone": "96589",
+                "zone_label": "Prado",
+                "id_currency": "1",
+                "iso_currency": "COP",
+                "name_currency": "Pesos Colombianos",
+                "title": "CASA COMERCIAL ESQUINA",
+                "address": "Carrera 55 #74-02, barrio El Prado",
+                "area": "487",
+                "id_unit_area": "1",
+                "unit_area_label": "M2",
+                "built_area": "270",
+                "id_unit_built_area": "1",
+                "unit_built_area_label": "M2",
+                "private_area": "270",
+                "id_unit_private_area": "1",
+                "unit_private_area_label": "M2",
+                "maintenance_fee": "0",
+                "sale_price": "0",
+                "sale_price_label": "$0",
+                "rent_price": "8000000",
+                "rent_price_label": "$8.000.000",
+                "bedrooms": "5",
+                "bathrooms": "5",
+                "garages": "1",
+                "floor": "",
+                "stratum": "5",
+                "observations": "<p>Excelente casa comercial de esquina, ubicada en el sector corporativo y financiero de mayor proyecci&oacute;n en la ciudad de Baranquilla.&nbsp; La casa tiene uso comercial autorizado&nbsp; actividades de comercializacion de bienes y servicios, cuenta con 9 parqueaderos propios para visitantes.&nbsp; La negociaci&oacute;n es directa con el propietario.</p>\n",
+                "video": "",
+                "id_property_condition": "2",
+                "property_condition_label": "Used",
+                "id_status_on_page": "1",
+                "status_on_page_label": "Active",
+                "map": "11.000807166615152,-74.80189561843873",
+                "latitude": "11.000807166615152",
+                "longitude": "-74.80189561843873",
+                "building_date": "",
+                "network_share": true,
+                "visits": "6",
+                "created_at": "2018-10-29 12:34:58",
+                "updated_at": "2018-11-13 16:42:42",
+                "reference": "",
+                "comment": "",
+                "id_rents_type": "4",
+                "rents_type_label": "Monthly",
+                "zip_code": "",
+                "id_availability": "1",
+                "availability_label": "Available",
+                "id_publish_on_map": "3",
+                "publish_on_map_label": "Post exact point",
+                "label": "",
+                "label_color": "",
+                "owner": "own",
+                "main_image": {
+                    "id_gallery": "730529",
+                    "id_image": 29558978,
+                    "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                    "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                    "description": "",
+                    "position": "1"
+                },
+                "galleries": [{
+                    "0": {
+                        "id": 29558978,
+                        "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                        "description": "",
+                        "position": "1"
+                    },
+                    "1": {
+                        "id": 29558979,
+                        "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
+                        "description": "",
+                        "position": "2"
+                    },
+                    "2": {
+                        "id": 29558980,
+                        "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
+                        "description": "",
+                        "position": "3"
+                    },
+                    "3": {
+                        "id": 29558981,
+                        "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
+                        "description": "",
+                        "position": "4"
+                    },
+                    "4": {
+                        "id": 29558982,
+                        "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
+                        "description": "",
+                        "position": "5"
+                    },
+                    "5": {
+                        "id": 29558983,
+                        "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
+                        "description": "",
+                        "position": "6"
+                    },
+                    "6": {
+                        "id": 29558984,
+                        "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
+                        "description": "",
+                        "position": "7"
+                    },
+                    "7": {
+                        "id": 29558985,
+                        "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
+                        "description": "",
+                        "position": "8"
+                    },
+                    "8": {
+                        "id": 29558986,
+                        "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
+                        "description": "",
+                        "position": "9"
+                    },
+                    "id": 730529
+                }],
+                "features": {
+                    "internal": [],
+                    "external": [{
+                        "id": 40,
+                        "nombre": "Terraza",
+                        "name": ""
+                    }, {
+                        "id": 67,
+                        "nombre": "Zona comercial",
+                        "name": ""
+                    }]
+                }
+            }, {
+                "id_property": 906433,
+                "id_company": 2426798,
+                "id_user": "24392",
+                "for_sale": true,
+                "for_rent": true,
+                "for_transfer": false,
+                "id_property_type": "1",
+                "id_country": "1",
+                "country_label": "Colombia",
+                "id_region": "4",
+                "region_label": "Atlántico",
+                "id_city": "82",
+                "city_label": "Barranquilla",
+                "id_location": 0,
+                "location_label": "",
+                "id_zone": "96589",
+                "zone_label": "Prado",
+                "id_currency": "1",
+                "iso_currency": "COP",
+                "name_currency": "Pesos Colombianos",
+                "title": "CASA COMERCIAL ESQUINA",
+                "address": "Carrera 55 #74-02, barrio El Prado",
+                "area": "487",
+                "id_unit_area": "1",
+                "unit_area_label": "M2",
+                "built_area": "270",
+                "id_unit_built_area": "1",
+                "unit_built_area_label": "M2",
+                "private_area": "270",
+                "id_unit_private_area": "1",
+                "unit_private_area_label": "M2",
+                "maintenance_fee": "0",
+                "sale_price": "0",
+                "sale_price_label": "$0",
+                "rent_price": "8000000",
+                "rent_price_label": "$8.000.000",
+                "bedrooms": "5",
+                "bathrooms": "5",
+                "garages": "1",
+                "floor": "",
+                "stratum": "5",
+                "observations": "<p>Excelente casa comercial de esquina, ubicada en el sector corporativo y financiero de mayor proyecci&oacute;n en la ciudad de Baranquilla.&nbsp; La casa tiene uso comercial autorizado&nbsp; actividades de comercializacion de bienes y servicios, cuenta con 9 parqueaderos propios para visitantes.&nbsp; La negociaci&oacute;n es directa con el propietario.</p>\n",
+                "video": "",
+                "id_property_condition": "2",
+                "property_condition_label": "Used",
+                "id_status_on_page": "1",
+                "status_on_page_label": "Active",
+                "map": "11.000807166615152,-74.80189561843873",
+                "latitude": "11.000807166615152",
+                "longitude": "-74.80189561843873",
+                "building_date": "",
+                "network_share": true,
+                "visits": "6",
+                "created_at": "2018-10-29 12:34:58",
+                "updated_at": "2018-11-13 16:42:42",
+                "reference": "",
+                "comment": "",
+                "id_rents_type": "4",
+                "rents_type_label": "Monthly",
+                "zip_code": "",
+                "id_availability": "1",
+                "availability_label": "Available",
+                "id_publish_on_map": "3",
+                "publish_on_map_label": "Post exact point",
+                "label": "",
+                "label_color": "",
+                "owner": "own",
+                "main_image": {
+                    "id_gallery": "730529",
+                    "id_image": 29558978,
+                    "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                    "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                    "description": "",
+                    "position": "1"
+                },
+                "galleries": [{
+                    "0": {
+                        "id": 29558978,
+                        "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                        "description": "",
+                        "position": "1"
+                    },
+                    "1": {
+                        "id": 29558979,
+                        "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
+                        "description": "",
+                        "position": "2"
+                    },
+                    "2": {
+                        "id": 29558980,
+                        "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
+                        "description": "",
+                        "position": "3"
+                    },
+                    "3": {
+                        "id": 29558981,
+                        "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
+                        "description": "",
+                        "position": "4"
+                    },
+                    "4": {
+                        "id": 29558982,
+                        "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
+                        "description": "",
+                        "position": "5"
+                    },
+                    "5": {
+                        "id": 29558983,
+                        "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
+                        "description": "",
+                        "position": "6"
+                    },
+                    "6": {
+                        "id": 29558984,
+                        "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
+                        "description": "",
+                        "position": "7"
+                    },
+                    "7": {
+                        "id": 29558985,
+                        "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
+                        "description": "",
+                        "position": "8"
+                    },
+                    "8": {
+                        "id": 29558986,
+                        "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
+                        "description": "",
+                        "position": "9"
+                    },
+                    "id": 730529
+                }],
+                "features": {
+                    "internal": [],
+                    "external": [{
+                        "id": 40,
+                        "nombre": "Terraza",
+                        "name": ""
+                    }, {
+                        "id": 67,
+                        "nombre": "Zona comercial",
+                        "name": ""
+                    }]
+                }
+            }, {
+                "id_property": 906433,
+                "id_company": 2426798,
+                "id_user": "24392",
+                "for_sale": false,
+                "for_rent": false,
+                "for_transfer": true,
+                "id_property_type": "1",
+                "id_country": "1",
+                "country_label": "Colombia",
+                "id_region": "4",
+                "region_label": "Atlántico",
+                "id_city": "82",
+                "city_label": "Barranquilla",
+                "id_location": 0,
+                "location_label": "",
+                "id_zone": "96589",
+                "zone_label": "Prado",
+                "id_currency": "1",
+                "iso_currency": "COP",
+                "name_currency": "Pesos Colombianos",
+                "title": "CASA COMERCIAL ESQUINA",
+                "address": "Carrera 55 #74-02, barrio El Prado",
+                "area": "487",
+                "id_unit_area": "1",
+                "unit_area_label": "M2",
+                "built_area": "270",
+                "id_unit_built_area": "1",
+                "unit_built_area_label": "M2",
+                "private_area": "270",
+                "id_unit_private_area": "1",
+                "unit_private_area_label": "M2",
+                "maintenance_fee": "0",
+                "sale_price": "0",
+                "sale_price_label": "$0",
+                "rent_price": "8000000",
+                "rent_price_label": "$8.000.000",
+                "bedrooms": "5",
+                "bathrooms": "5",
+                "garages": "1",
+                "floor": "",
+                "stratum": "5",
+                "observations": "<p>Excelente casa comercial de esquina, ubicada en el sector corporativo y financiero de mayor proyecci&oacute;n en la ciudad de Baranquilla.&nbsp; La casa tiene uso comercial autorizado&nbsp; actividades de comercializacion de bienes y servicios, cuenta con 9 parqueaderos propios para visitantes.&nbsp; La negociaci&oacute;n es directa con el propietario.</p>\n",
+                "video": "",
+                "id_property_condition": "2",
+                "property_condition_label": "Used",
+                "id_status_on_page": "1",
+                "status_on_page_label": "Active",
+                "map": "11.000807166615152,-74.80189561843873",
+                "latitude": "11.000807166615152",
+                "longitude": "-74.80189561843873",
+                "building_date": "",
+                "network_share": true,
+                "visits": "6",
+                "created_at": "2018-10-29 12:34:58",
+                "updated_at": "2018-11-13 16:42:42",
+                "reference": "",
+                "comment": "",
+                "id_rents_type": "4",
+                "rents_type_label": "Monthly",
+                "zip_code": "",
+                "id_availability": "1",
+                "availability_label": "Available",
+                "id_publish_on_map": "3",
+                "publish_on_map_label": "Post exact point",
+                "label": "",
+                "label_color": "",
+                "owner": "own",
+                "main_image": {
+                    "id_gallery": "730529",
+                    "id_image": 29558978,
+                    "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                    "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                    "description": "",
+                    "position": "1"
+                },
+                "galleries": [{
+                    "0": {
+                        "id": 29558978,
+                        "url": "https://images.wasi.co/inmuebles/b15905120181029122950.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905120181029122950.jpg",
+                        "description": "",
+                        "position": "1"
+                    },
+                    "1": {
+                        "id": 29558979,
+                        "url": "https://images.wasi.co/inmuebles/b15905220181029122955.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905220181029122955.jpg",
+                        "description": "",
+                        "position": "2"
+                    },
+                    "2": {
+                        "id": 29558980,
+                        "url": "https://images.wasi.co/inmuebles/b15905320181029122958.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905320181029122958.jpg",
+                        "description": "",
+                        "position": "3"
+                    },
+                    "3": {
+                        "id": 29558981,
+                        "url": "https://images.wasi.co/inmuebles/b15905420181029123000.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905420181029123000.jpg",
+                        "description": "",
+                        "position": "4"
+                    },
+                    "4": {
+                        "id": 29558982,
+                        "url": "https://images.wasi.co/inmuebles/b15905520181029123003.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905520181029123003.jpg",
+                        "description": "",
+                        "position": "5"
+                    },
+                    "5": {
+                        "id": 29558983,
+                        "url": "https://images.wasi.co/inmuebles/b15905620181029123005.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905620181029123005.jpg",
+                        "description": "",
+                        "position": "6"
+                    },
+                    "6": {
+                        "id": 29558984,
+                        "url": "https://images.wasi.co/inmuebles/b15905720181029123007.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905720181029123007.jpg",
+                        "description": "",
+                        "position": "7"
+                    },
+                    "7": {
+                        "id": 29558985,
+                        "url": "https://images.wasi.co/inmuebles/b15905820181029123010.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905820181029123010.jpg",
+                        "description": "",
+                        "position": "8"
+                    },
+                    "8": {
+                        "id": 29558986,
+                        "url": "https://images.wasi.co/inmuebles/b15905920181029123013.jpg",
+                        "url_big": "https://images.wasi.co/inmuebles/g15905920181029123013.jpg",
+                        "description": "",
+                        "position": "9"
+                    },
+                    "id": 730529
+                }],
+                "features": {
+                    "internal": [],
+                    "external": [{
+                        "id": 40,
+                        "nombre": "Terraza",
+                        "name": ""
+                    }, {
+                        "id": 67,
+                        "nombre": "Zona comercial",
+                        "name": ""
+                    }]
+                }
+            }]
+        };
+    }
+});
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    [[_c("list-properties", { attrs: { properties: _vm.properties } })]],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-34adda36", module.exports)
+  }
+}
+
+/***/ }),
+/* 25 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c(
+      "section",
+      { staticClass: "page-wrapper", attrs: { id: "page-content" } },
+      [
+        _c("div", { staticClass: "featured-flat-area pt-115 pb-80" }, [
+          _c("div", { staticClass: "container" }, [
+            _vm._m(1),
+            _vm._v(" "),
+            _c("div", { staticClass: "featured-flat" }, [
+              _c("div", { staticClass: "row" }, [_c("properties-app")], 1)
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _vm._m(2),
+        _vm._v(" "),
+        _vm._v("\n        brands\n        "),
+        _vm._v(" "),
+        _vm._v("\n         SUBSCRIBE\n        ")
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("div", { staticClass: "slider-1 pos-relative slider-overlay" }, [
-        _c("div", { staticClass: "bend niceties preview-1" }, [
-          _c(
-            "div",
-            { staticClass: "slides", attrs: { id: "ensign-nivoslider-3" } },
-            [
-              _c("div", { staticClass: "col-sm-4 col-xs-12" }, [
-                _c("img", {
-                  attrs: {
-                    src: "website/images/brand/slider.png",
-                    alt: "",
-                    title: "#slider-direction-1"
-                  }
-                })
-              ]),
+    return _c("div", { staticClass: "slider-1 pos-relative slider-overlay" }, [
+      _c("div", { staticClass: "bend niceties preview-1" }, [
+        _c(
+          "div",
+          { staticClass: "slides", attrs: { id: "ensign-nivoslider-3" } },
+          [
+            _c("div", { staticClass: "col-sm-4 col-xs-12" }, [
+              _c("img", {
+                attrs: {
+                  src: "website/images/brand/slider.png",
+                  alt: "",
+                  title: "#slider-direction-1"
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-sm-4 col-xs-12" }, [
+              _c("img", {
+                attrs: {
+                  src: "website/images/slider/s2.jpg",
+                  alt: "",
+                  title: "#slider-direction-2"
+                }
+              })
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "slider-direction",
+            attrs: { id: "slider-direction-1" }
+          },
+          [
+            _c("div", { staticClass: "slider-content text-center" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.5s" }
+                },
+                [
+                  _c("h4", { staticClass: "slider-1-title-1" }, [
+                    _vm._v("Bienvenido "),
+                    _c("span", [_vm._v("Inversiones & Proyectos")])
+                  ])
+                ]
+              ),
               _vm._v(" "),
-              _c("div", { staticClass: "col-sm-4 col-xs-12" }, [
-                _c("img", {
-                  attrs: {
-                    src: "website/images/slider/s2.jpg",
-                    alt: "",
-                    title: "#slider-direction-2"
-                  }
-                })
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "slider-direction",
-              attrs: { id: "slider-direction-1" }
-            },
-            [
-              _c("div", { staticClass: "slider-content text-center" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: {
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": "0.5s"
-                    }
-                  },
-                  [
-                    _c("h4", { staticClass: "slider-1-title-1" }, [
-                      _vm._v("Bienvenido "),
-                      _c("span", [_vm._v("Inversiones & Proyectos")])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: { "data-wow-duration": "1s", "data-wow-delay": "1s" }
-                  },
-                  [
-                    _c("h1", { staticClass: "slider-1-title-2" }, [
-                      _vm._v("TE ASESORAMOS EN LA BUSQUEDA DE SU LOCAL")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: {
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": "1.5s"
-                    }
-                  },
-                  [
-                    _c("p", { staticClass: "slider-1-desc" }, [
-                      _vm._v(
-                        "Le asesoramos en la busqueda de la ubicación ideal para su marca "
-                      ),
-                      _c("br"),
-                      _vm._v(
-                        " realizamos estudios de mercado y ranking de zonas "
-                      )
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: { "data-wow-duration": "1s", "data-wow-delay": "2s" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "slider-button mt-40",
-                        attrs: { href: "#" }
-                      },
-                      [_vm._v("SOY UNA MARCA")]
-                    )
-                  ]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "slider-direction",
-              attrs: { id: "slider-direction-2" }
-            },
-            [
-              _c("div", { staticClass: "slider-content text-left" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: {
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": "0.5s"
-                    }
-                  },
-                  [
-                    _c("h4", { staticClass: "slider-1-title-1" }, [
-                      _vm._v("Bienvenido "),
-                      _c("span", [_vm._v("Inversiones & Proyectos")])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: { "data-wow-duration": "1s", "data-wow-delay": "1s" }
-                  },
-                  [
-                    _c("h1", { staticClass: "slider-1-title-2" }, [
-                      _vm._v("LE AYUDAMOS CON SU INMUEBLES")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: {
-                      "data-wow-duration": "1s",
-                      "data-wow-delay": "1.5s"
-                    }
-                  },
-                  [
-                    _c("p", { staticClass: "slider-1-desc" }, [
-                      _vm._v(
-                        "Si esta buscando un inmueble para venta y/o arriendo "
-                      ),
-                      _c("br"),
-                      _vm._v(" o quiere promocionar uno. ")
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "wow fadeInUp",
-                    attrs: { "data-wow-duration": "1s", "data-wow-delay": "2s" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "slider-button mt-40",
-                        attrs: { href: "#" }
-                      },
-                      [_vm._v("BUSCO INMUEBLES")]
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "1s" }
+                },
+                [
+                  _c("h1", { staticClass: "slider-1-title-2" }, [
+                    _vm._v("TE ASESORAMOS EN LA BUSQUEDA DE SU LOCAL")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "1.5s" }
+                },
+                [
+                  _c("p", { staticClass: "slider-1-desc" }, [
+                    _vm._v(
+                      "Le asesoramos en la busqueda de la ubicación ideal para su marca "
                     ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        staticClass: "slider-button mt-40",
-                        attrs: { href: "#" }
-                      },
-                      [_vm._v("PROMOCIONAR MI INMUEBLE")]
+                    _c("br"),
+                    _vm._v(
+                      " realizamos estudios de mercado y ranking de zonas "
                     )
-                  ]
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "2s" }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "slider-button mt-40",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("SOY UNA MARCA")]
+                  )
+                ]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "slider-direction",
+            attrs: { id: "slider-direction-2" }
+          },
+          [
+            _c("div", { staticClass: "slider-content text-left" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "0.5s" }
+                },
+                [
+                  _c("h4", { staticClass: "slider-1-title-1" }, [
+                    _vm._v("Bienvenido "),
+                    _c("span", [_vm._v("Inversiones & Proyectos")])
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "1s" }
+                },
+                [
+                  _c("h1", { staticClass: "slider-1-title-2" }, [
+                    _vm._v("LE AYUDAMOS CON SU INMUEBLES")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "1.5s" }
+                },
+                [
+                  _c("p", { staticClass: "slider-1-desc" }, [
+                    _vm._v(
+                      "Si esta buscando un inmueble para venta y/o arriendo "
+                    ),
+                    _c("br"),
+                    _vm._v(" o quiere promocionar uno. ")
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "wow fadeInUp",
+                  attrs: { "data-wow-duration": "1s", "data-wow-delay": "2s" }
+                },
+                [
+                  _c(
+                    "a",
+                    {
+                      staticClass: "slider-button mt-40",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("BUSCO INMUEBLES")]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      staticClass: "slider-button mt-40",
+                      attrs: { href: "#" }
+                    },
+                    [_vm._v("PROMOCIONAR MI INMUEBLE")]
+                  )
+                ]
+              )
+            ])
+          ]
+        )
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "section-title-2 text-center" }, [
+          _c("h2", [_vm._v("Featured PROPERTY")]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Sheltek is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud"
+            )
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "blog-area pb-60" }, [
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "section-title-2 text-center" }, [
+              _c("h2", [_vm._v(" BLOG")]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v(
+                  "Visite nuestro Blog, y enterese de las opiniones de los expertos en materia inmobiliaria"
                 )
               ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "section",
-        { staticClass: "page-wrapper", attrs: { id: "page-content" } },
-        [
-          _c("div", { staticClass: "featured-flat-area pt-115 pb-80" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "section-title-2 text-center" }, [
-                    _c("h2", [_vm._v("PROPIEDADES MAS SOLICITADAS")])
-                  ])
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "featured-flat" }, [
-                _c("div", { staticClass: "row" }, [
-                  _vm._v(
-                    " \n                        PROPIEDADES\n                    "
-                  )
-                ])
-              ])
             ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "blog-area pb-60" }, [
-            _c("div", { staticClass: "container" }, [
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-md-12" }, [
-                  _c("div", { staticClass: "section-title-2 text-center" }, [
-                    _c("h2", [_vm._v(" BLOG")]),
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "blog-carousel" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("article", { staticClass: "blog-item bg-gray" }, [
+                _c("div", { staticClass: "blog-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "website/images/blog/1.jpg", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "blog-info" }, [
+                  _c("div", { staticClass: "post-title-time" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Inversiones en Barranquilla")
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("p", [
-                      _vm._v(
-                        "Visite nuestro Blog, y enterese de las opiniones de los expertos en materia inmobiliaria"
-                      )
-                    ])
+                    _c("p", [_vm._v("Diciembre 10, 2018 / 10 am")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Inversiones en Barranquilla por mas de 2.4 billones de pesos en Infraestructura "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "read-more", attrs: { href: "#" } }, [
+                    _vm._v("Leer Mas...")
                   ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "blog-carousel" }, [
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("article", { staticClass: "blog-item bg-gray" }, [
-                      _c("div", { staticClass: "blog-image" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("img", {
-                            attrs: { src: "website/images/blog/1.jpg", alt: "" }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "blog-info" }, [
-                        _c("div", { staticClass: "post-title-time" }, [
-                          _c("h5", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("Inversiones en Barranquilla")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Diciembre 10, 2018 / 10 am")])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Inversiones en Barranquilla por mas de 2.4 billones de pesos en Infraestructura "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          { staticClass: "read-more", attrs: { href: "#" } },
-                          [_vm._v("Leer Mas...")]
-                        )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("article", { staticClass: "blog-item bg-gray" }, [
+                _c("div", { staticClass: "blog-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "website/images/blog/2.jpg", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "blog-info" }, [
+                  _c("div", { staticClass: "post-title-time" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Que opinan los Inversionistas")
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Diciembre 09, 2018 / 10 am")])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("article", { staticClass: "blog-item bg-gray" }, [
-                      _c("div", { staticClass: "blog-image" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("img", {
-                            attrs: { src: "website/images/blog/2.jpg", alt: "" }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "blog-info" }, [
-                        _c("div", { staticClass: "post-title-time" }, [
-                          _c("h5", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("Que opinan los Inversionistas")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Diciembre 09, 2018 / 10 am")])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Inversionistas predicen buen comienzo en el 2019 en materia de inversión extranjera."
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          { staticClass: "read-more", attrs: { href: "#" } },
-                          [_vm._v("Leer Mas...")]
-                        )
-                      ])
-                    ])
+                  _c("p", [
+                    _vm._v(
+                      "Inversionistas predicen buen comienzo en el 2019 en materia de inversión extranjera."
+                    )
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("article", { staticClass: "blog-item bg-gray" }, [
-                      _c("div", { staticClass: "blog-image" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("img", {
-                            attrs: { src: "website/images/blog/3.jpg", alt: "" }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "blog-info" }, [
-                        _c("div", { staticClass: "post-title-time" }, [
-                          _c("h5", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("Nuevas reformas para el POT")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Diciembre 09, 2018 / 10 am")])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Enterese de lo ultimo en reformas para el POT, nuevos decretos a tener en cuenta en Barranquilla"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          { staticClass: "read-more", attrs: { href: "#" } },
-                          [_vm._v("Leer Mas...")]
-                        )
+                  _c("a", { staticClass: "read-more", attrs: { href: "#" } }, [
+                    _vm._v("Leer Mas...")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("article", { staticClass: "blog-item bg-gray" }, [
+                _c("div", { staticClass: "blog-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "website/images/blog/3.jpg", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "blog-info" }, [
+                  _c("div", { staticClass: "post-title-time" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Nuevas reformas para el POT")
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Diciembre 09, 2018 / 10 am")])
                   ]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "col-md-12" }, [
-                    _c("article", { staticClass: "blog-item bg-gray" }, [
-                      _c("div", { staticClass: "blog-image" }, [
-                        _c("a", { attrs: { href: "#" } }, [
-                          _c("img", {
-                            attrs: { src: "website/images/blog/2.jpg", alt: "" }
-                          })
-                        ])
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "blog-info" }, [
-                        _c("div", { staticClass: "post-title-time" }, [
-                          _c("h5", [
-                            _c("a", { attrs: { href: "#" } }, [
-                              _vm._v("Latest Design House")
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("p", [_vm._v("Diciembre 09, 2018 / 10 am")])
-                        ]),
-                        _vm._v(" "),
-                        _c("p", [
-                          _vm._v(
-                            "Lorem must explain to you how all this mistaolt denouncing pleasure and praising pain wasnad I will give you a complete pain was praising"
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c(
-                          "a",
-                          { staticClass: "read-more", attrs: { href: "#" } },
-                          [_vm._v("Leer Mas...")]
-                        )
+                  _c("p", [
+                    _vm._v(
+                      "Enterese de lo ultimo en reformas para el POT, nuevos decretos a tener en cuenta en Barranquilla"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "read-more", attrs: { href: "#" } }, [
+                    _vm._v("Leer Mas...")
+                  ])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("article", { staticClass: "blog-item bg-gray" }, [
+                _c("div", { staticClass: "blog-image" }, [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _c("img", {
+                      attrs: { src: "website/images/blog/2.jpg", alt: "" }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "blog-info" }, [
+                  _c("div", { staticClass: "post-title-time" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v("Latest Design House")
                       ])
-                    ])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Diciembre 09, 2018 / 10 am")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _vm._v(
+                      "Lorem must explain to you how all this mistaolt denouncing pleasure and praising pain wasnad I will give you a complete pain was praising"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("a", { staticClass: "read-more", attrs: { href: "#" } }, [
+                    _vm._v("Leer Mas...")
                   ])
                 ])
               ])
             ])
-          ]),
-          _vm._v(" "),
-          _vm._v("\n        brands\n        "),
-          _vm._v(" "),
-          _vm._v("\n         SUBSCRIBE\n        ")
-        ]
-      )
+          ])
+        ])
+      ])
     ])
   }
 ]
@@ -16631,15 +17650,15 @@ if (false) {
 }
 
 /***/ }),
-/* 23 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(24)
+var __vue_script__ = __webpack_require__(27)
 /* template */
-var __vue_template__ = __webpack_require__(25)
+var __vue_template__ = __webpack_require__(28)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -16678,7 +17697,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 24 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -16871,7 +17890,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 25 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17264,15 +18283,15 @@ if (false) {
 }
 
 /***/ }),
-/* 26 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(27)
+var __vue_script__ = __webpack_require__(30)
 /* template */
-var __vue_template__ = __webpack_require__(34)
+var __vue_template__ = __webpack_require__(37)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17311,14 +18330,14 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 27 */
+/* 30 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__header___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__header__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__footer__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__footer__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__footer___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__footer__);
 //
 //
@@ -17350,15 +18369,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 28 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(29)
+var __vue_script__ = __webpack_require__(32)
 /* template */
-var __vue_template__ = __webpack_require__(30)
+var __vue_template__ = __webpack_require__(33)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17397,7 +18416,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 29 */
+/* 32 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17529,7 +18548,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 30 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -17676,7 +18695,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "col-md-2 col-sm-6 col-xs-12" }, [
       _c("div", { staticClass: "logo" }, [
-        _c("a", { attrs: { href: "index.html" } }, [
+        _c("a", { attrs: { href: "#" } }, [
           _c("img", { attrs: { src: "website/images/logo/logo.png", alt: "" } })
         ])
       ])
@@ -17794,15 +18813,15 @@ if (false) {
 }
 
 /***/ }),
-/* 31 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(0)
 /* script */
-var __vue_script__ = __webpack_require__(32)
+var __vue_script__ = __webpack_require__(35)
 /* template */
-var __vue_template__ = __webpack_require__(33)
+var __vue_template__ = __webpack_require__(36)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -17841,7 +18860,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 32 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -17917,7 +18936,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 33 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18063,7 +19082,7 @@ if (false) {
 }
 
 /***/ }),
-/* 34 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -18087,10 +19106,1822 @@ if (false) {
 }
 
 /***/ }),
-/* 35 */
-/***/ (function(module, exports) {
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(39)
+/* template */
+var __vue_template__ = __webpack_require__(40)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/properties_client/List.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-7755c081", Component.options)
+  } else {
+    hotAPI.reload("data-v-7755c081", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 39 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Item_vue__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__Item_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__Item_vue__);
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'list_properties',
+    components: {
+        'item-property': __WEBPACK_IMPORTED_MODULE_0__Item_vue___default.a
+    },
+    props: ['properties']
+});
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    _vm._l(_vm.properties, function(property, index) {
+      return _c("item-property", {
+        key: property.id,
+        attrs: { properties: _vm.properties, property: property, index: index }
+      })
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-7755c081", module.exports)
+  }
+}
+
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(42)
+/* template */
+var __vue_template__ = __webpack_require__(43)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/properties_client/Item.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6d504876", Component.options)
+  } else {
+    hotAPI.reload("data-v-6d504876", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 42 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'Item-property',
+    props: ['property'],
+    methods: {
+        details_property: function details_property() {
+            this.$router.push('/properties/' + this.property.id_property);
+        }
+    }
+});
+
+/***/ }),
+/* 43 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "col-md-4 col-sm-6 col-xs-12" }, [
+    _c("div", { staticClass: "flat-item" }, [
+      _c("div", { staticClass: "flat-item-image" }, [
+        _vm.property.for_sale
+          ? _c("span", { staticClass: "for-sale" }, [_vm._v("Venta")])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.property.for_rent
+          ? _c("span", { staticClass: "for-sale" }, [_vm._v("Arriendo")])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.property.for_transfer
+          ? _c("span", { staticClass: "for-sale" }, [_vm._v("Arriendo/Venta")])
+          : _vm._e(),
+        _vm._v(" "),
+        _c(
+          "a",
+          {
+            on: {
+              click: function($event) {
+                $event.preventDefault()
+                return _vm.details_property($event)
+              }
+            }
+          },
+          [_c("img", { attrs: { src: "images/flat/1.jpg", alt: "" } })]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "flat-link" }, [
+          _c(
+            "a",
+            {
+              on: {
+                click: function($event) {
+                  $event.preventDefault()
+                  return _vm.details_property($event)
+                }
+              }
+            },
+            [_vm._v("Ver Detalles")]
+          )
+        ]),
+        _vm._v(" "),
+        _c("ul", { staticClass: "flat-desc" }, [
+          _c("li", [
+            _c("img", { attrs: { src: "images/icons/4.png", alt: "" } }),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.property.area))])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("img", { attrs: { src: "images/icons/5.png", alt: "" } }),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.property.bedrooms))])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("img", { attrs: { src: "images/icons/6.png", alt: "" } }),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.property.bathrooms))])
+          ]),
+          _vm._v(" "),
+          _c("li", [
+            _c("img", { attrs: { src: "images/icons/13.png", alt: "" } }),
+            _vm._v(" "),
+            _c("span", [_vm._v(_vm._s(_vm.property.stratum))])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "flat-item-info" }, [
+        _c("div", { staticClass: "flat-title-price" }, [
+          _c("h5", [
+            _c(
+              "a",
+              {
+                on: {
+                  click: function($event) {
+                    $event.preventDefault()
+                    return _vm.details_property($event)
+                  }
+                }
+              },
+              [_vm._v(_vm._s(_vm.property.title) + " ")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm.property.for_sale
+            ? _c("span", { staticClass: "price" }, [
+                _vm._v(_vm._s(_vm.property.sale_price_label))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.property.for_rent
+            ? _c("span", { staticClass: "price" }, [
+                _vm._v(_vm._s(_vm.property.rent_price_label))
+              ])
+            : _vm._e(),
+          _vm._v(" "),
+          _vm.property.for_transfer
+            ? _c("span", { staticClass: "price" }, [
+                _vm._v(
+                  _vm._s(_vm.property.rent_price_label) +
+                    " / " +
+                    _vm._s(_vm.property.sale_price_label)
+                )
+              ])
+            : _vm._e()
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _c("img", { attrs: { src: "images/icons/location.png", alt: "" } }),
+          _vm._v(_vm._s(_vm.property.address))
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-6d504876", module.exports)
+  }
+}
+
+/***/ }),
+/* 44 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+var __vue_script__ = __webpack_require__(45)
+/* template */
+var __vue_template__ = __webpack_require__(46)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/js/components/properties_client/Details.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-abc920a2", Component.options)
+  } else {
+    hotAPI.reload("data-v-abc920a2", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 45 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    name: 'details_property',
+    props: ['id'],
+    computed: {}
+});
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "properties-details-area pt-115 pb-60" }, [
+    _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-4" }, [
+          _c("aside", { staticClass: "widget widget-search-property" }, [
+            _c("h5", [_vm._v("Detalles de la Propiedad " + _vm._s(_vm.id))]),
+            _vm._v(" "),
+            _vm._m(1)
+          ]),
+          _vm._v(" "),
+          _vm._m(2),
+          _vm._v(" "),
+          _vm._m(3)
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-md-8" }, [
+      _c("div", { staticClass: "pro-details-image mb-60" }, [
+        _c("div", { staticClass: "pro-details-big-image" }, [
+          _c("div", { staticClass: "tab-content" }, [
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane fade in active",
+                attrs: { role: "tabpanel", id: "pro-1" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/website/images/single-property/big/1.jpg",
+                      "data-lightbox": "image-1",
+                      "data-title": "Sheltek Properties - 1"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/website/images/single-property/big/1.jpg",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane fade",
+                attrs: { role: "tabpanel", id: "pro-2" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/website/images/single-property/big/2.jpg",
+                      "data-lightbox": "image-1",
+                      "data-title": "Sheltek Properties - 2"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/website/images/single-property/big/2.jpg",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane fade",
+                attrs: { role: "tabpanel", id: "pro-3" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/website/images/single-property/big/3.jpg",
+                      "data-lightbox": "image-1",
+                      "data-title": "Sheltek Properties - 3"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/website/images/single-property/big/3.jpg",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane fade",
+                attrs: { role: "tabpanel", id: "pro-4" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/website/images/single-property/big/1.jpg",
+                      "data-lightbox": "image-1",
+                      "data-title": "Sheltek Properties - 4"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/website/images/single-property/big/1.jpg",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "tab-pane fade",
+                attrs: { role: "tabpanel", id: "pro-5" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    attrs: {
+                      href: "/website/images/single-property/big/2.jpg",
+                      "data-lightbox": "image-1",
+                      "data-title": "Sheltek Properties - 5"
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: {
+                        src: "/website/images/single-property/big/2.jpg",
+                        alt: ""
+                      }
+                    })
+                  ]
+                )
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "pro-details-carousel" }, [
+          _c("div", { staticClass: "pro-details-item" }, [
+            _c("a", { attrs: { href: "#pro-1", "data-toggle": "tab" } }, [
+              _c("img", {
+                attrs: {
+                  src: "/website/images/single-property/small/1.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "pro-details-item" }, [
+            _c("a", { attrs: { href: "#pro-2", "data-toggle": "tab" } }, [
+              _c("img", {
+                attrs: {
+                  src: "/website/images/single-property/small/2.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "pro-details-item" }, [
+            _c("a", { attrs: { href: "#pro-3", "data-toggle": "tab" } }, [
+              _c("img", {
+                attrs: {
+                  src: "/website/images/single-property/small/3.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "pro-details-item" }, [
+            _c("a", { attrs: { href: "#pro-4", "data-toggle": "tab" } }, [
+              _c("img", {
+                attrs: {
+                  src: "/website/images/single-property/small/4.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "pro-details-item" }, [
+            _c("a", { attrs: { href: "#pro-5", "data-toggle": "tab" } }, [
+              _c("img", {
+                attrs: {
+                  src: "/website/images/single-property/small/1.jpg",
+                  alt: ""
+                }
+              })
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pro-details-short-info mb-60" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-sm-6 col-xs-12" }, [
+            _c("div", { staticClass: "pro-details-condition" }, [
+              _c("h5", [_vm._v("Condition")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "pro-details-condition-inner bg-gray" },
+                [
+                  _c("ul", { staticClass: "condition-list" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "/website/images/icons/5.png", alt: "" }
+                      }),
+                      _vm._v("34")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "/website/images/icons/6.png", alt: "" }
+                      }),
+                      _vm._v("3 Cuartos")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "/website/images/icons/7.png", alt: "" }
+                      }),
+                      _vm._v("2 Baños")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "/website/images/icons/13.png", alt: "" }
+                      }),
+                      _vm._v("Garage 2")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: { src: "/website/images/icons/14.png", alt: "" }
+                      }),
+                      _vm._v("Kitchen 2")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("$52,350")])
+                  ]),
+                  _vm._v(" "),
+                  _c("p", [
+                    _c("img", {
+                      attrs: {
+                        src: "/website/images/icons/location.png",
+                        alt: ""
+                      }
+                    }),
+                    _vm._v("address")
+                  ])
+                ]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-sm-6 col-xs-12" }, [
+            _c("div", { staticClass: "pro-details-amenities" }, [
+              _c("h5", [_vm._v("Amenities")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "pro-details-amenities-inner bg-gray" },
+                [
+                  _c("ul", { staticClass: "amenities-list" }, [
+                    _c("li", [_vm._v("Air Conditioning")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Bedding")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Balcony")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Cable TV")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Internet")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Parking")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Lift")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Pool")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Dishwasher")]),
+                    _vm._v(" "),
+                    _c("li", [_vm._v("Toaster")])
+                  ])
+                ]
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pro-details-description mb-50" }, [
+        _c("p", [
+          _c(
+            "span",
+            {
+              staticClass: "tooltip-content",
+              attrs: {
+                "data-placement": "top",
+                "data-toggle": "tooltip",
+                "data-original-title": "The name you can trust"
+              }
+            },
+            [_vm._v("Sheltek")]
+          ),
+          _vm._v(
+            " is  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut quipx ea codo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Sheltek is the Best  should be the consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacm emod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniamco laboris nisi ut aliqu"
+          )
+        ]),
+        _vm._v(" "),
+        _c("p", [
+          _vm._v(
+            "Sheltek is the Best  should be the consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacm"
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pro-details-feedback mb-40" }, [
+        _c("h5", [_vm._v("3 Feedback")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "media" }, [
+          _c("a", { staticClass: "media-left", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { src: "/website/images/avatar/1.jpg", alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "media-body" }, [
+            _c("h6", { staticClass: "media-heading" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("David Backhum")])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("span", [_vm._v("6 hour ago")]),
+              _vm._v(
+                "There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt "
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "media" }, [
+          _c("a", { staticClass: "media-left", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { src: "/website/images/avatar/2.jpg", alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "media-body" }, [
+            _c("h6", { staticClass: "media-heading" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Saniya Mirza")])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("span", [_vm._v("8 hour ago")]),
+              _vm._v(
+                "There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt "
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "media" }, [
+          _c("a", { staticClass: "media-left", attrs: { href: "#" } }, [
+            _c("img", {
+              attrs: { src: "/website/images/avatar/3.jpg", alt: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "media-body" }, [
+            _c("h6", { staticClass: "media-heading" }, [
+              _c("a", { attrs: { href: "#" } }, [_vm._v("Lionel Messi")])
+            ]),
+            _vm._v(" "),
+            _c("p", [
+              _c("span", [_vm._v("10 hour ago")]),
+              _vm._v(
+                "There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt "
+              )
+            ])
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "pro-details-agent-review" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-5 col-sm-5 col-xs-12" }, [
+            _c("div", { staticClass: "pro-details-agent" }, [
+              _c("h5", [_vm._v("Contact Agent")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "single-agent" }, [
+                _c("div", { staticClass: "agent-image" }, [
+                  _c("img", {
+                    attrs: { src: "/website/images/agents/2.jpg", alt: "" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "agent-info" }, [
+                  _c("div", { staticClass: "agent-name" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Eva Sharlin")])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Real Estate Broker")])
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "agent-info-hover" }, [
+                  _c("div", { staticClass: "agent-name" }, [
+                    _c("h5", [
+                      _c("a", { attrs: { href: "#" } }, [_vm._v("Eva Sharlin")])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [_vm._v("Real Estate Broker")])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "agent-address" }, [
+                    _c("li", [
+                      _c("img", {
+                        attrs: {
+                          src: "/website/images/icons/phone-2.png",
+                          alt: ""
+                        }
+                      }),
+                      _vm._v("+1245  785  659 ")
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("img", {
+                        attrs: {
+                          src: "/website/images/icons/mail-close.png",
+                          alt: ""
+                        }
+                      }),
+                      _vm._v("eva@gmail.com ")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("ul", { staticClass: "social-media" }, [
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", {
+                          staticClass: "fa fa-facebook",
+                          attrs: { "aria-hidden": "true" }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", {
+                          staticClass: "fa fa-twitter",
+                          attrs: { "aria-hidden": "true" }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", {
+                          staticClass: "fa fa-linkedin",
+                          attrs: { "aria-hidden": "true" }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("li", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _c("i", {
+                          staticClass: "fa fa-google-plus",
+                          attrs: { "aria-hidden": "true" }
+                        })
+                      ])
+                    ])
+                  ])
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-7  col-sm-7 col-xs-12" }, [
+            _c("div", { staticClass: "leave-review" }, [
+              _c("h5", [_vm._v("Leave a Review")]),
+              _vm._v(" "),
+              _c("form", { attrs: { action: "#" } }, [
+                _c("input", {
+                  attrs: {
+                    type: "text",
+                    name: "name",
+                    placeholder: "Your name"
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  attrs: {
+                    type: "email",
+                    name: "email",
+                    placeholder: "Email here"
+                  }
+                }),
+                _vm._v(" "),
+                _c("textarea"),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "submit-btn-1", attrs: { type: "button" } },
+                  [_vm._v("SUBMIT REVIEW")]
+                )
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-6 col-sm-3 col-xs-12" }, [
+        _c("div", { staticClass: "find-home-item custom-select" }, [
+          _c(
+            "select",
+            {
+              staticClass: "selectpicker",
+              attrs: {
+                title: "Location",
+                "data-hide-disabled": "true",
+                "data-live-search": "true"
+              }
+            },
+            [
+              _c(
+                "optgroup",
+                { attrs: { disabled: "disabled", label: "disabled" } },
+                [_c("option", [_vm._v("Hidden")])]
+              ),
+              _vm._v(" "),
+              _c("optgroup", { attrs: { label: "Australia" } }, [
+                _c("option", [_vm._v("Sydney")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Melbourne")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Cairns")])
+              ]),
+              _vm._v(" "),
+              _c("optgroup", { attrs: { label: "USA" } }, [
+                _c("option", [_vm._v("South Carolina")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Florida")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Rhode Island")])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 col-sm-3 col-xs-12" }, [
+        _c("div", { staticClass: "find-home-item custom-select" }, [
+          _c(
+            "select",
+            {
+              staticClass: "selectpicker",
+              attrs: {
+                title: "Sub - Location",
+                "data-hide-disabled": "true",
+                "data-live-search": "true"
+              }
+            },
+            [
+              _c(
+                "optgroup",
+                { attrs: { disabled: "disabled", label: "disabled" } },
+                [_c("option", [_vm._v("Hidden")])]
+              ),
+              _vm._v(" "),
+              _c("optgroup", { attrs: { label: "Australia" } }, [
+                _c("option", [_vm._v("southeastern coast")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("southeastern tip")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("northwest corner")])
+              ]),
+              _vm._v(" "),
+              _c("optgroup", { attrs: { label: "USA" } }, [
+                _c("option", [_vm._v("Charleston")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("St. Petersburg")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("Newport")])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 col-sm-3 col-xs-12" }, [
+        _c("div", { staticClass: "find-home-item" }, [
+          _c("input", {
+            attrs: {
+              type: "text",
+              name: "min-area",
+              placeholder: "Min area (sqft)"
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 col-sm-3 col-xs-12" }, [
+        _c("div", { staticClass: "find-home-item" }, [
+          _c("input", {
+            attrs: {
+              type: "text",
+              name: "max-area",
+              placeholder: "Max area (sqft)"
+            }
+          })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 col-sm-3 col-xs-12" }, [
+        _c("div", { staticClass: "find-home-item  custom-select" }, [
+          _c(
+            "select",
+            {
+              staticClass: "selectpicker",
+              attrs: { title: "No. of Beadrooms", "data-hide-disabled": "true" }
+            },
+            [
+              _c("optgroup", { attrs: { label: "1" } }, [
+                _c("option", { attrs: { label: "1" } }, [
+                  _vm._v("1 Beadrooms")
+                ]),
+                _vm._v(" "),
+                _c("option", [_vm._v("2 Beadrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("3 Beadrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("4 Beadrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("5 Beadrooms")])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-6 col-sm-3 col-xs-12" }, [
+        _c("div", { staticClass: "find-home-item custom-select" }, [
+          _c(
+            "select",
+            {
+              staticClass: "selectpicker",
+              attrs: { title: "No. of Bathrooms", "data-hide-disabled": "true" }
+            },
+            [
+              _c("optgroup", { attrs: { label: "2" } }, [
+                _c("option", [_vm._v("1 Bathrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("2 Bathrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("3 Bathrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("4 Bathrooms")]),
+                _vm._v(" "),
+                _c("option", [_vm._v("5 Bathrooms")])
+              ])
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "col-md-10 col-sm-6 col-xs-12" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12 col-sm-7 col-xs-12" }, [
+            _c("div", { staticClass: "find-home-item" }, [
+              _c("div", { staticClass: "shop-filter" }, [
+                _c("div", { staticClass: "price_filter" }, [
+                  _c("div", { staticClass: "price_slider_amount" }, [
+                    _c("input", {
+                      attrs: { type: "submit", value: "You range :" }
+                    }),
+                    _vm._v(" "),
+                    _c("input", {
+                      attrs: {
+                        type: "text",
+                        id: "amount",
+                        name: "price",
+                        placeholder: "Add Your Price"
+                      }
+                    })
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { attrs: { id: "slider-range" } })
+                ])
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-12 col-sm-5 col-xs-12" }, [
+            _c("div", { staticClass: "find-home-item" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "button-1 btn-block btn-hover-1",
+                  attrs: { href: "#" }
+                },
+                [_vm._v("SEARCH")]
+              )
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("aside", { staticClass: "widget widget-featured-property" }, [
+      _c("h5", [_vm._v("Featured Property")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-md-12 col-sm-6 col-xs-12" }, [
+          _c("div", { staticClass: "flat-item" }, [
+            _c("div", { staticClass: "flat-item-image" }, [
+              _c("span", { staticClass: "for-sale" }, [_vm._v("For Sale")]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [
+                _c("img", {
+                  attrs: { src: "/website/images/flat/1.jpg", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flat-link" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "flat-desc" }, [
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/4.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("450 sqft")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/5.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("5")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/6.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("3")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flat-item-info" }, [
+              _c("div", { staticClass: "flat-title-price" }, [
+                _c("h5", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Masons de Villa ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _c("img", {
+                  attrs: { src: "/website/images/icons/location.png", alt: "" }
+                }),
+                _vm._v("568 E 1st Ave, Ney Jersey")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-12 col-sm-6 col-xs-12" }, [
+          _c("div", { staticClass: "flat-item" }, [
+            _c("div", { staticClass: "flat-item-image" }, [
+              _c("span", { staticClass: "for-sale" }, [_vm._v("For Sale")]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [
+                _c("img", {
+                  attrs: { src: "/website/images/flat/2.jpg", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flat-link" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "flat-desc" }, [
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/4.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("450 sqft")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/5.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("5")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/6.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("3")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flat-item-info" }, [
+              _c("div", { staticClass: "flat-title-price" }, [
+                _c("h5", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Masons de Villa ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _c("img", {
+                  attrs: { src: "/website/images/icons/location.png", alt: "" }
+                }),
+                _vm._v("568 E 1st Ave, Ney Jersey")
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-md-12 hidden-sm col-xs-12" }, [
+          _c("div", { staticClass: "flat-item" }, [
+            _c("div", { staticClass: "flat-item-image" }, [
+              _c("span", { staticClass: "for-sale" }, [_vm._v("For Sale")]),
+              _vm._v(" "),
+              _c("a", { attrs: { href: "#" } }, [
+                _c("img", {
+                  attrs: { src: "/website/images/flat/3.jpg", alt: "" }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flat-link" }, [
+                _c("a", { attrs: { href: "#" } }, [_vm._v("More Details")])
+              ]),
+              _vm._v(" "),
+              _c("ul", { staticClass: "flat-desc" }, [
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/4.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("450 sqft")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/5.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("5")])
+                ]),
+                _vm._v(" "),
+                _c("li", [
+                  _c("img", {
+                    attrs: { src: "/website/images/icons/6.png", alt: "" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v("3")])
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "flat-item-info" }, [
+              _c("div", { staticClass: "flat-title-price" }, [
+                _c("h5", [
+                  _c("a", { attrs: { href: "#" } }, [
+                    _vm._v("Masons de Villa ")
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("span", { staticClass: "price" }, [_vm._v("$52,350")])
+              ]),
+              _vm._v(" "),
+              _c("p", [
+                _c("img", {
+                  attrs: { src: "/website/images/icons/location.png", alt: "" }
+                }),
+                _vm._v("568 E 1st Ave, Ney Jersey")
+              ])
+            ])
+          ])
+        ])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("aside", { staticClass: "widget widget-video" }, [
+      _c("h5", [_vm._v("Take A Look")]),
+      _vm._v(" "),
+      _c("div", { staticClass: "properties-video" }, [
+        _c("div", { staticClass: "embed-responsive embed-responsive-16by9" }, [
+          _c("iframe", {
+            attrs: {
+              src:
+                "https://player.vimeo.com/video/117765418?title=0&byline=0&portrait=0",
+              allowfullscreen: ""
+            }
+          })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-abc920a2", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

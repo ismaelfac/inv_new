@@ -7,7 +7,7 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-6 col-xs-12">
                             <div class="logo">
-                                <a href="index.html">
+                                <a href="#">
                                     <img src="website/images/logo/logo.png" alt="">
                                 </a>
                             </div>
@@ -115,12 +115,12 @@
     </div>
 </template>
 <script>
-export default {
-    name:'Header',
-    data() {
-        return {
-            current_user: true
+    export default {
+        name:'Header',
+        data() {
+            return {
+                current_user: true
+            }
         }
     }
-}
 </script>

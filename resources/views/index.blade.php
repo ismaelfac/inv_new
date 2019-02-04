@@ -8,9 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="images/icons/favicon.png">
-
-    <!-- All css files are included here. -->
+    <link rel="shortcut icon" type="image/x-icon" href="website/images/icons/favicon.png">
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="website/css/bootstrap.min.css">
     <!-- nivo slider CSS -->
@@ -28,21 +26,23 @@
     <!-- User style -->
     <link rel="stylesheet" href="website/css/custom.css">
 
+
     <!-- Modernizr JS -->
-    <script src="./website/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="website/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
     <div class="wrapper">
         <div id="app">
-            <main-app/>
+            <main-app></main-app>
         </div>
     </div>
-    <script src="{{ asset('js/app.js') }}"></script>
     <!-- jquery latest version -->
     <script src="website/js/vendor/jquery-3.1.1.min.js"></script>
     <!-- Bootstrap framework js -->
     <script src="website/js/bootstrap.min.js"></script>
     <!-- Nivo slider js -->    
+    <script src="{{ mix('/js/app.js') }}"></script>
     <script src="website/lib/js/jquery.nivo.slider.js"></script>
     <!-- ajax-mail js -->
     <script src="website/js/ajax-mail.js"></script>
@@ -50,7 +50,6 @@
     <script src="website/js/plugins.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="website/js/main.js"></script>
-    
     
 </body>
 </html>

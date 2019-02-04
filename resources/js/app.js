@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Vuex from 'vuex'
@@ -12,10 +13,10 @@ const router = new VueRouter({
     mode: 'history'
 });
 
-const inv = new Vue({
+new Vue({
     el: '#app',
     router,
-    components:{
+    components: {
         'main-app': Main
     }
 });
