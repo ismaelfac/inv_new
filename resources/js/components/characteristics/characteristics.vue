@@ -7,8 +7,8 @@
                     <h5>Condiciones</h5>
                     <div class="pro-details-condition-inner bg-gray">
                         <ul class="condition-list" v-for="(condition) in conditions" :key="condition.id">
-                            <li class="col-md-6" v-if="condition.area_total"><img src="/website/images/icons/5.png" alt="">Area Total {{ condition.area_total }}</li>
-                            <li class="col-md-6" v-if="condition.built_area"><img src="/website/images/icons/5.png" alt="">Area Contruida {{ condition.built_area }}</li>
+                            <li class="col-md-6" v-if="condition.area_total"><img src="/website/images/icons/4.png" alt="">Area Total {{ condition.area_total }}</li>
+                            <li class="col-md-6" v-if="condition.built_area"><img src="/website/images/icons/4.png" alt="">Area Contruida {{ condition.built_area }}</li>
                             <li class="col-md-6" v-if="condition.bathroom"><img src="/website/images/icons/5.png" alt="">{{ condition.bathroom }} Cuartos</li>
                             <li class="col-md-6" v-if="condition.bedroom"><img src="/website/images/icons/6.png" alt="">{{ condition.bedroom }} Baños</li>
                             <li class="col-md-6" v-if="condition.garage"><img src="/website/images/icons/13.png" alt="">{{ condition.garage }} Garajes</li>

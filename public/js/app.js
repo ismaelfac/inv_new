@@ -19314,7 +19314,7 @@ var render = function() {
                   condition.area_total
                     ? _c("li", { staticClass: "col-md-6" }, [
                         _c("img", {
-                          attrs: { src: "/website/images/icons/5.png", alt: "" }
+                          attrs: { src: "/website/images/icons/4.png", alt: "" }
                         }),
                         _vm._v("Area Total " + _vm._s(condition.area_total))
                       ])
@@ -19323,7 +19323,7 @@ var render = function() {
                   condition.built_area
                     ? _c("li", { staticClass: "col-md-6" }, [
                         _c("img", {
-                          attrs: { src: "/website/images/icons/5.png", alt: "" }
+                          attrs: { src: "/website/images/icons/4.png", alt: "" }
                         }),
                         _vm._v("Area Contruida " + _vm._s(condition.built_area))
                       ])
