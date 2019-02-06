@@ -1,86 +1,116 @@
-import { getLocalUser } from './helpers/auth';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import tasks from './tasks.js'
+Vue.use(Vuex)
 
-const user = getLocalUser();
-export default {
+export default new Vuex.Store({
     state: {
-        loading: false,
-        currentUser: user,
-        isLoggedIn: !!user,
-        auth_error: null,
-        customers: [],
-        countries: []
+        tasks,
+        properties
     },
     getters: {
-        isLoading(state){
-            return state.loading;
+        findTask(state) {
+            return function (id){
+         		let task = state.tasks.find(task => task.id == id)
+                not_found_unless(task);
+                return task;    
+            }
         },
-        isLoggedIn(state){
-            return state.isLoggedIn;
-        },
-        currentUser(state){
-            return state.currentUser;
-        },
-        auth_error(state){
-            return state.auth_error;
-        },
-        customers(state){
-            return state.customers;
-        },
-        countries(state){
-            return state.countries;
+        findProperty(state) {
+            return function (id){
+         		let property = state.properties.find(property => property.id == id)
+                not_found_unless(property);
+                return property;    
+            }
         },
     },
     mutations: {
-        login(state){
-            state.loading = true;
-            state.auth_error = null;
+        createTask(state, newTask){
+            state.tasks.push(newTask)
         },
-        loginSuccess(state, payload){
-            state.auth_error = null;
-            state.isLoggedIn = true;
-            state.loading = false;
-            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
-            localStorage.setItem("user", JSON.stringify(state.currentUser));
+        createProperty(state, newProperty){
+            state.properties.push(newProperty)
         },
-        loginFailed(state, payload){
-            state.loading = false;
-            state.auth_error = payload.error;
+        toggleTask(state, task) {
+            task.pending = !task.pending;
         },
-        logout(state){
-            localStorage.removeItem("user");
-            state.isLoading = false;
-            state.currentUser = null;
+        toggleProperty(state, property) {
+            property.pending = !property.pending;
         },
-        updateCustomers(state, payload){
-            state.customers = payload;
-
+        updateTask(state, {id, draft}){
+            let index = state.tasks.findIndex(task => task.id == id);
+            state.tasks.splice(index, 1, draft)
         },
-        updateCountries(state, payload){
-            state.countries = payload;
-
+        updateProperty(state, {id, draft_property}){
+            let index = state.properties.findIndex(property => property.id == id);
+            state.properties.splice(index, 1, draft_property)
+        },
+        deleteTask(state, id) {
+            let index = state.tasks.findIndex(task => task.id == id);  
+            state.tasks.splice(index, 1);
+        },
+        deleteProperty(state, id) {
+            let index = state.properties.findIndex(property => property.id == id);  
+            state.properties.splice(index, 1);
+        },
+        deleteCompletedTasks(state) {
+            state.tasks = state.tasks.filter(task => task.pending);
+        },
+        deleteCompletedProperties(state) {
+            state.properties = state.properties.filter(property => property.pending);
         }
     },
-    actions:{
-        login(context){
-            context.commit("login");
+    actions: {
+        createTask(context,{ title, description }) {
+            return new Promise((resolve, reject) => {
+                let newTask = {
+                    id: context.state.tasks.length + 1,
+                    title,
+                    description,
+                    pending: true
+                }    
+                context.commit('createTask', newTask)
+                resolve(newTask)
+            })            
         },
-        getCustomers(context){
-            axios.get('/api/customers', {
-                headers:{
-                    "Authorization": `Bearer ${context.state.currentUser.token}`
-                }
-            }).then((response) => {
-                context.commit('updateCustomers', response.data.customers.data);
-            })
+        createProperty(context,{ title, description }) {
+            return new Promise((resolve, reject) => {
+                let newProperty = {
+                    id: context.state.properties.length + 1,
+                    title,
+                    description,
+                    pending: true
+                }    
+                context.commit('createProperty', newProperty)
+                resolve(newProperty)
+            })            
         },
-        getCountries(context){
-            axios.get('/api/getCountries', {
-                headers:{
-                    "Authorization": `Bearer ${context.state.currentUser.token}`
-                }
-            }).then((response) => {
-                context.commit('updateCountries', response.data.countries.data);
-            })
+        updateTask(context, payload) {
+            context.commit('updateTask', payload)
+        },
+        updateProperty(context, payload) {
+            context.commit('updateProperty', payload)
+        },
+        toggleTask(context, task){
+            context.commit('toggleTask', task)
+        },
+        toggleProperty(context, property){
+            context.commit('toggleProperty', property)
+        },
+        deleteTask(context, id){
+            context.commit('deleteTask', id)
+        },
+        deleteProperty(context, id){
+            context.commit('deleteProperty', id)
+        },
+        deleteCompletedTasks(context){
+            context.commit('deleteCompletedTasks')
+        },
+        deleteCompletedProperties(context){
+            context.commit('deleteCompletedProperties')
         }
     }
-};
+})
+
+
+

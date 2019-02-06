@@ -311,7 +311,7 @@
     <!-- PROPERTIES DETAILS AREA END -->
 </template>
 <script>
-import comments from '../comments/comments.vue'
+import comments from '../comments/List.vue'
 import characteristics from '../characteristics/characteristics.vue'
 export default {
     name: 'details_property',
