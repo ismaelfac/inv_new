@@ -3,7 +3,6 @@
     "name": "Inicio",
     "slug": "home",
     "description": "Ver el home",
-    "variant": null,
     "variant": "success",
     "is_system": 0
   },
@@ -50,6 +49,20 @@
     "is_system": 1
   },
   {
+    "name": "Imprimir",
+    "slug": "users.print",
+    "description": "Imprimir Usuarios",
+    "variant": "danger",
+    "is_system": 1
+  },
+  {
+    "name": "Exportar",
+    "slug": "users.export",
+    "description": "Exportar Usuarios",
+    "variant": "danger",
+    "is_system": 1
+  },
+  {
     "name": "Navegar Roles",
     "slug": "roles.index",
     "description": "Lista los roles del sistema",
@@ -82,6 +95,20 @@
     "slug": "roles.destroy",
     "description": "Eliminar los roles del sistema",
     "variant": "success",
+    "is_system": 1
+  },
+  {
+    "name": "Imprimir",
+    "slug": "roles.print",
+    "description": "Imprimir Roles",
+    "variant": "danger",
+    "is_system": 1
+  },
+  {
+    "name": "Exportar",
+    "slug": "roles.export",
+    "description": "Exportar Roles",
+    "variant": "danger",
     "is_system": 1
   },
   {
@@ -120,38 +147,66 @@
     "is_system": 1
   },
   {
+    "name": "Imprimir",
+    "slug": "permissions.print",
+    "description": "Imprimir Permisos",
+    "variant": "danger",
+    "is_system": 1
+  },
+  {
+    "name": "Exportar",
+    "slug": "permissions.export",
+    "description": "Exportar Permisos",
+    "variant": "danger",
+    "is_system": 1
+  },
+  {
     "name": "Navegar Clientes",
-    "slug": "clients.index",
+    "slug": "customers.index",
     "description": "Lista los Clientes",
     "variant": "success",
     "is_system": 0
   },
   {
     "name": "Crear Clientes",
-    "slug": "clients.create",
+    "slug": "customers.create",
     "description": "Puede crear los clientes",
     "variant": "success",
     "is_system": 0
   },
   {
     "name": "Ver detalle de Clientes",
-    "slug": "clients.show",
+    "slug": "customers.show",
     "description": "Ver el detalle de los clientes",
     "variant": "success",
     "is_system": 0
   },
   {
     "name": "Edición de Clientes",
-    "slug": "clients.edit",
+    "slug": "customers.edit",
     "description": "Editar los Clientes",
     "variant": "success",
     "is_system": 0
   },
   {
     "name": "Eliminar Clientes",
-    "slug": "clients.destroy",
+    "slug": "customers.destroy",
     "description": "Eliminar los Clientes",
     "variant": "success",
+    "is_system": 0
+  },
+  {
+    "name": "Imprimir",
+    "slug": "customers.print",
+    "description": "Imprimir Clientes",
+    "variant": "danger",
+    "is_system": 0
+  },
+  {
+    "name": "Exportar",
+    "slug": "customers.export",
+    "description": "Exportar Clientes",
+    "variant": "danger",
     "is_system": 0
   },
   {
@@ -190,6 +245,20 @@
     "is_system": 0
   },
   {
+    "name": "Imprimir",
+    "slug": "properties.print",
+    "description": "Imprimir Propiedades",
+    "variant": "danger",
+    "is_system": 0
+  },
+  {
+    "name": "Exportar",
+    "slug": "properties.export",
+    "description": "Exportar Propiedades",
+    "variant": "danger",
+    "is_system": 0
+  },
+  {
     "name": "Navegar Paises",
     "slug": "countries.index",
     "description": "Lista los Paises",
@@ -222,6 +291,20 @@
     "slug": "countries.destroy",
     "description": "Eliminar los Paises",
     "variant": "success",
+    "is_system": 1
+  },
+  {
+    "name": "Imprimir",
+    "slug": "countries.print",
+    "description": "Imprimir",
+    "variant": "danger",
+    "is_system": 1
+  },
+  {
+    "name": "Exportar",
+    "slug": "countries.export",
+    "description": "Exportar",
+    "variant": "danger",
     "is_system": 1
   },
   {

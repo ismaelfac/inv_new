@@ -1,32 +1,41 @@
 <template>
-<div class="row">
-    <div class="col-md-12 col-xs-12">
-        <a href="" class="btn btn-success btn-block" @click.prevent="new_comment()">Comentar</a>
+    <!-- pro-details-feedback -->
+    <div class="pro-details-feedback mb-40">
+        <h5>3 Feedback</h5>
+        <!-- media -->
+        <div class="media">
+            <a class="media-left" href="#">
+                <img src="/website/images/avatar/1.jpg" alt="">
+            </a>
+            <div class="media-body">
+                <h6 class="media-heading"><a href="#">David Backhum</a></h6>
+                <p><span>6 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
+            </div>
+        </div>
+        <!-- media -->
+        <div class="media">
+            <a class="media-left" href="#">
+                <img src="/website/images/avatar/2.jpg" alt="">
+            </a>
+            <div class="media-body">
+                <h6 class="media-heading"><a href="#">Saniya Mirza</a></h6>
+                <p><span>8 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
+            </div>
+        </div>
+        <!-- media -->
+        <div class="media">
+            <a class="media-left" href="#">
+                <img src="/website/images/avatar/3.jpg" alt="">
+            </a>
+            <div class="media-body">
+                <h6 class="media-heading"><a href="#">Lionel Messi</a></h6>
+                <p><span>10 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
+            </div>
+        </div>
     </div>
-    <div class="col-md-12 col-xs-12 comment">
-        <item-comment v-for="comment in comments" :key="comment.id"
-                    :comments="comments" :comment="comment"></item-comment>                                  
-    </div>
-</div>
 </template>
 <script>
-import itemcomment from './item_comment'
 export default {
-    components: {
-        'item-comment': itemcomment
-    },
-    props:['comments'],
-    methods: {
-        new_comment() {
-            alert('Nuevo comentario')
-        }
-    }
+    name: 'comments'
 }
 </script>
-<style lang="scss">
-.comment {
-    height: 163px;
-    overflow: scroll;
-    padding: 15px;
-}
-</style>

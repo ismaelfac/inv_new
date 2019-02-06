@@ -1,6 +1,6 @@
 <template>
     <div>
-         <!-- SLIDER SECTION START -->
+    <!-- SLIDER SECTION START -->
     <div class="slider-1 pos-relative slider-overlay">
         <div class="bend niceties preview-1">
             <div id="ensign-nivoslider-3" class="slides">   
@@ -44,121 +44,121 @@
             </div>
         </div>
     </div>
-        <!-- SLIDER SECTION END -->
+    <!-- SLIDER SECTION END -->
+    
     <!-- Start page content -->
     <section id="page-content" class="page-wrapper">
-             
+            
         <!-- FEATURED FLAT AREA START -->
-        <div class="featured-flat-area pt-115 pb-80">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title-2 text-center">
-                            <h2>PROPIEDADES MAS SOLICITADAS</h2>
+            <div class="featured-flat-area pt-115 pb-80">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title-2 text-center">
+                                <h2>Propiedades Destacadas</h2>
+                             </div>
+                        </div>
+                    </div>
+                    <div class="featured-flat">
+                        <div class="row">
+                            <!-- flat-item -->
+                            <properties-app></properties-app> 
                         </div>
                     </div>
                 </div>
-                <div class="featured-flat">
-                    <div class="row">
-                    <!-- flat-item --> 
-                        PROPIEDADES
-                    <!-- flat-item -->
-                    </div>
-                </div>
             </div>
-        </div>
         <!-- FEATURED FLAT AREA END -->
 
-        <!-- BLOG AREA START -->
-        <div class="blog-area pb-60">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title-2 text-center">
-                            <h2> BLOG</h2>
-                            <p>Visite nuestro Blog, y enterese de las opiniones de los expertos en materia inmobiliaria</p>
+            <!-- BLOG AREA START -->
+            <div class="blog-area pb-60">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="section-title-2 text-center">
+                                <h2> BLOG</h2>
+                                <p>Visite nuestro Blog, y enterese de las opiniones de los expertos en materia inmobiliaria</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="blog-carousel">
-                        <!-- blog-item -->
-                        <div class="col-md-12">
-                            <article class="blog-item bg-gray">
-                                <div class="blog-image">
-                                    <a href="#"><img src="website/images/blog/1.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-info">
-                                    <div class="post-title-time">
-                                        <h5><a href="#">Inversiones en Barranquilla</a></h5>
-                                        <p>Diciembre 10, 2018 / 10 am</p>
+                    <div class="row">
+                        <div class="blog-carousel">
+                            <!-- blog-item -->
+                            <div class="col-md-12">
+                                <article class="blog-item bg-gray">
+                                    <div class="blog-image">
+                                        <a href="#"><img src="website/images/blog/1.jpg" alt=""></a>
                                     </div>
-                                    <p>Inversiones en Barranquilla por mas de 2.4 billones de pesos en Infraestructura </p>
-                                    <a class="read-more" href="#">Leer Mas...</a>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- blog-item -->
-                        <div class="col-md-12">
-                            <article class="blog-item bg-gray">
-                                <div class="blog-image">
-                                    <a href="#"><img src="website/images/blog/2.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-info">
-                                    <div class="post-title-time">
-                                        <h5><a href="#">Que opinan los Inversionistas</a></h5>
-                                        <p>Diciembre 09, 2018 / 10 am</p>
+                                    <div class="blog-info">
+                                        <div class="post-title-time">
+                                            <h5><a href="#">Inversiones en Barranquilla</a></h5>
+                                            <p>Diciembre 10, 2018 / 10 am</p>
+                                        </div>
+                                        <p>Inversiones en Barranquilla por mas de 2.4 billones de pesos en Infraestructura </p>
+                                        <a class="read-more" href="#">Leer Mas...</a>
                                     </div>
-                                    <p>Inversionistas predicen buen comienzo en el 2019 en materia de inversión extranjera.</p>
-                                    <a class="read-more" href="#">Leer Mas...</a>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- blog-item -->
-                        <div class="col-md-12">
-                            <article class="blog-item bg-gray">
-                                <div class="blog-image">
-                                    <a href="#"><img src="website/images/blog/3.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-info">
-                                    <div class="post-title-time">
-                                        <h5><a href="#">Nuevas reformas para el POT</a></h5>
-                                        <p>Diciembre 09, 2018 / 10 am</p>
+                                </article>
+                            </div>
+                            <!-- blog-item -->
+                            <div class="col-md-12">
+                                <article class="blog-item bg-gray">
+                                    <div class="blog-image">
+                                        <a href="#"><img src="website/images/blog/2.jpg" alt=""></a>
                                     </div>
-                                    <p>Enterese de lo ultimo en reformas para el POT, nuevos decretos a tener en cuenta en Barranquilla</p>
-                                    <a class="read-more" href="#">Leer Mas...</a>
-                                </div>
-                            </article>
-                        </div>
-                        <!-- blog-item -->
-                        <div class="col-md-12">
-                            <article class="blog-item bg-gray">
-                                <div class="blog-image">
-                                    <a href="#"><img src="website/images/blog/2.jpg" alt=""></a>
-                                </div>
-                                <div class="blog-info">
-                                    <div class="post-title-time">
-                                        <h5><a href="#">Latest Design House</a></h5>
-                                        <p>Diciembre 09, 2018 / 10 am</p>
+                                    <div class="blog-info">
+                                        <div class="post-title-time">
+                                            <h5><a href="#">Que opinan los Inversionistas</a></h5>
+                                            <p>Diciembre 09, 2018 / 10 am</p>
+                                        </div>
+                                        <p>Inversionistas predicen buen comienzo en el 2019 en materia de inversión extranjera.</p>
+                                        <a class="read-more" href="#">Leer Mas...</a>
                                     </div>
-                                    <p>Lorem must explain to you how all this mistaolt denouncing pleasure and praising pain wasnad I will give you a complete pain was praising</p>
-                                    <a class="read-more" href="#">Leer Mas...</a>
-                                </div>
-                            </article>
+                                </article>
+                            </div>
+                            <!-- blog-item -->
+                            <div class="col-md-12">
+                                <article class="blog-item bg-gray">
+                                    <div class="blog-image">
+                                        <a href="#"><img src="website/images/blog/3.jpg" alt=""></a>
+                                    </div>
+                                    <div class="blog-info">
+                                        <div class="post-title-time">
+                                            <h5><a href="#">Nuevas reformas para el POT</a></h5>
+                                            <p>Diciembre 09, 2018 / 10 am</p>
+                                        </div>
+                                        <p>Enterese de lo ultimo en reformas para el POT, nuevos decretos a tener en cuenta en Barranquilla</p>
+                                        <a class="read-more" href="#">Leer Mas...</a>
+                                    </div>
+                                </article>
+                            </div>
+                            <!-- blog-item -->
+                            <div class="col-md-12">
+                                <article class="blog-item bg-gray">
+                                    <div class="blog-image">
+                                        <a href="#"><img src="website/images/blog/2.jpg" alt=""></a>
+                                    </div>
+                                    <div class="blog-info">
+                                        <div class="post-title-time">
+                                            <h5><a href="#">Latest Design House</a></h5>
+                                            <p>Diciembre 09, 2018 / 10 am</p>
+                                        </div>
+                                        <p>Lorem must explain to you how all this mistaolt denouncing pleasure and praising pain wasnad I will give you a complete pain was praising</p>
+                                        <a class="read-more" href="#">Leer Mas...</a>
+                                    </div>
+                                </article>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- BLOG AREA END -->
+            <!-- BLOG AREA END -->
 
-        <!-- BRAND AREA START -->
-        brands
-        <!-- BRAND AREA END -->
-        
-        <!-- SUBSCRIBE AREA START -->
-        SUBSCRIBE
-        <!-- SUBSCRIBE AREA END -->
+            <!-- BRAND AREA START -->
+            brands
+            <!-- BRAND AREA END -->
+            
+            <!-- SUBSCRIBE AREA START -->
+             SUBSCRIBE
+            <!-- SUBSCRIBE AREA END -->
     </section>
     <!-- End page content -->
         
@@ -166,7 +166,11 @@
 
 </template>
 <script>
+import Properties from './properties_client/properties.vue'
 export default {
-    name: 'content'
+    name: 'content',
+    components: {
+        'properties-app': Properties
+    }
 }
 </script>

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Inversiones</title>
-    <link rel="shortcut icon" type="image/x-icon" href="./website/images/icons/favicon.png">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- All css files are included here. -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="website/images/icons/favicon.png">
     <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="website/css/bootstrap.min.css">
     <!-- nivo slider CSS -->
@@ -25,15 +26,15 @@
     <!-- User style -->
     <link rel="stylesheet" href="website/css/custom.css">
 
+
     <!-- Modernizr JS -->
-    <script src="./website/js/vendor/modernizr-2.8.3.min.js"></script>
-    <!-- Scripts -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="website/js/vendor/modernizr-2.8.3.min.js"></script>
+
 </head>
 <body>
     <div class="wrapper">
         <div id="app">
-            <main-app/>
+            <main-app></main-app>
         </div>
     </div>
     <!-- jquery latest version -->
@@ -41,6 +42,7 @@
     <!-- Bootstrap framework js -->
     <script src="website/js/bootstrap.min.js"></script>
     <!-- Nivo slider js -->    
+    <script src="{{ mix('/js/app.js') }}"></script>
     <script src="website/lib/js/jquery.nivo.slider.js"></script>
     <!-- ajax-mail js -->
     <script src="website/js/ajax-mail.js"></script>
@@ -48,6 +50,6 @@
     <script src="website/js/plugins.js"></script>
     <!-- Main js file that contents all jQuery plugins activation. -->
     <script src="website/js/main.js"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
+    
 </body>
 </html>
