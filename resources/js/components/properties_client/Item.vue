@@ -5,9 +5,9 @@
                 <span v-if="property.for_sale" class="for-sale">Venta</span>
                 <span v-if="property.for_rent" class="for-sale">Arriendo</span>
                 <span v-if="property.for_transfer" class="for-sale">Arriendo/Venta</span>
-                <a @click.prevent="details_property"><img src="images/flat/1.jpg" alt=""></a>
+                <a href="#!" @click.prevent="details_property"><img src="images/flat/1.jpg" alt=""></a>
                 <div class="flat-link">
-                    <a @click.prevent="details_property">Ver Detalles</a>
+                    <a href="#!" @click.prevent="details_property">Ver Detalles</a>
                 </div>
                 <ul class="flat-desc">
                     <li>
@@ -30,12 +30,12 @@
             </div>
             <div class="flat-item-info">
                 <div class="flat-title-price">
-                    <h5><a @click.prevent="details_property">{{ property.title }} </a></h5>
+                    <h5><a href="#!" @click.prevent="details_property">{{ property.title }} </a></h5>
                     <span v-if="property.for_sale" class="price">{{ property.sale_price_label}}</span>
                     <span v-if="property.for_rent" class="price">{{ property.rent_price_label}}</span>
                     <span v-if="property.for_transfer" class="price">{{ property.rent_price_label}} / {{ property.sale_price_label}}</span>
                 </div>
-                <p><img src="images/icons/location.png" alt="">{{ property.address}}</p>
+                <p><img src="images/icons/location.png" alt="">{{ property.address }}</p>
             </div>
         </div>
     </div>

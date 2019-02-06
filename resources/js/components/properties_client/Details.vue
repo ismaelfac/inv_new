@@ -61,136 +61,29 @@
                                 </div>
                             </div>                           
                         </div>
-                        <!-- pro-details-short-info -->
-                        <div class="pro-details-short-info mb-60">
-                            <div class="row">
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="pro-details-condition">
-                                        <h5>Condition</h5>
-                                        <div class="pro-details-condition-inner bg-gray">
-                                            <ul class="condition-list">
-                                                <li><img src="/website/images/icons/5.png" alt="">34</li>
-                                                <li><img src="/website/images/icons/6.png" alt="">3 Cuartos</li>
-                                                <li><img src="/website/images/icons/7.png" alt="">2 Baños</li>
-                                                <li><img src="/website/images/icons/13.png" alt="">Garage 2</li>
-                                                <li><img src="/website/images/icons/14.png" alt="">Kitchen 2</li>
-                                                <li>$52,350</li>
-                                            </ul>
-                                            <p><img src="/website/images/icons/location.png" alt="">address</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 col-xs-12">
-                                    <div class="pro-details-amenities">
-                                        <h5>Amenities</h5>
-                                        <div class="pro-details-amenities-inner bg-gray">
-                                            <ul class="amenities-list">
-                                                <li>Air Conditioning</li>
-                                                <li>Bedding</li>
-                                                <li>Balcony</li>
-                                                <li>Cable TV</li>
-                                                <li>Internet</li>
-                                                <li>Parking</li>
-                                                <li>Lift</li>
-                                                <li>Pool</li>
-                                                <li>Dishwasher</li>
-                                                <li>Toaster</li>
-                                            </ul>
-                                        </div>
-                                    </div>
+                         <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Caracteristicas</a></li>
+                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Comentarios</a></li>
+                            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+                            <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="characteristics">
+                                <div class="container">
+                                    <characteristics :conditions="conditions" :amenities="amenities"></characteristics>
                                 </div>
                             </div>
+                            <div role="tabpanel" class="tab-pane" id="profile">
+                                <div class="container">
+                                    <comments></comments>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="messages">3</div>
+                            <div role="tabpanel" class="tab-pane" id="settings">4</div>
                         </div>
-                        <!-- pro-details-description -->
-                        <div class="pro-details-description mb-50">
-                            <p><span data-placement="top" data-toggle="tooltip" data-original-title="The name you can trust" class="tooltip-content">Sheltek</span> is  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut quipx ea codo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolo</p>
-                            <p>Sheltek is the Best  should be the consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacm emod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniamco laboris nisi ut aliqu</p>
-                            <p>Sheltek is the Best  should be the consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lore magna iqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex eacm</p>
-                        </div>
-                        <!-- pro-details-feedback -->
-                        <div class="pro-details-feedback mb-40">
-                            <h5>3 Feedback</h5>
-                            <!-- media -->
-                            <div class="media">
-                                <a class="media-left" href="#">
-                                    <img src="/website/images/avatar/1.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading"><a href="#">David Backhum</a></h6>
-                                    <p><span>6 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
-                                </div>
-                            </div>
-                            <!-- media -->
-                            <div class="media">
-                                <a class="media-left" href="#">
-                                    <img src="/website/images/avatar/2.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading"><a href="#">Saniya Mirza</a></h6>
-                                    <p><span>8 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
-                                </div>
-                            </div>
-                            <!-- media -->
-                            <div class="media">
-                                <a class="media-left" href="#">
-                                    <img src="/website/images/avatar/3.jpg" alt="">
-                                </a>
-                                <div class="media-body">
-                                    <h6 class="media-heading"><a href="#">Lionel Messi</a></h6>
-                                    <p><span>10 hour ago</span>There are some business lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiu tempor inc ididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrudt </p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- agent-review -->
-                        <div class="pro-details-agent-review">
-                            <div class="row">
-                                <!-- single-agent -->
-                                <div class="col-md-5 col-sm-5 col-xs-12">
-                                    <div class="pro-details-agent">
-                                        <h5>Contact Agent</h5>
-                                        <div class="single-agent">
-                                            <div class="agent-image">
-                                                <img src="/website/images/agents/2.jpg" alt="">
-                                            </div>
-                                            <div class="agent-info">
-                                                <div class="agent-name">
-                                                    <h5><a href="#">Eva Sharlin</a></h5>
-                                                    <p>Real Estate Broker</p>
-                                                </div>
-                                            </div>
-                                            <div class="agent-info-hover">
-                                                <div class="agent-name">
-                                                    <h5><a href="#">Eva Sharlin</a></h5>
-                                                    <p>Real Estate Broker</p>
-                                                </div>
-                                                <ul class="agent-address">
-                                                    <li><img src="/website/images/icons/phone-2.png" alt="">+1245  785  659 </li>
-                                                    <li><img src="/website/images/icons/mail-close.png" alt="">eva@gmail.com </li>
-                                                </ul>
-                                                <ul class="social-media">
-                                                    <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                                    <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- leave-massage -->
-                                <div class="col-md-7  col-sm-7 col-xs-12">
-                                    <div class="leave-review">
-                                        <h5>Leave a Review</h5>
-                                        <form action="#">
-                                            <input type="text" name="name" placeholder="Your name">
-                                            <input type="email" name="email" placeholder="Email here">
-                                            <textarea></textarea>
-                                            <button type="button" class="submit-btn-1">SUBMIT REVIEW</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                     <div class="col-md-4">
                         <!-- widget-search-property -->
@@ -418,11 +311,23 @@
     <!-- PROPERTIES DETAILS AREA END -->
 </template>
 <script>
+import comments from '../comments/comments.vue'
+import characteristics from '../characteristics/characteristics.vue'
 export default {
     name: 'details_property',
     props: ['id'],
+    components:{
+        comments,
+        characteristics
+    },
     computed:{
         
-    }
+    },
+    data() {
+        return {
+            conditions:[{'area_total': '470'}, {'built_area': '470'}, {'bathroom': '470'}, {'bedroom': '4'}, {'garage': '1'}, {'kitchen': '1'}, {'floor': '4'}, {'stratum': '3'}],
+            amenities:[{'air_conditioning': '1'}, {'balcony': '1'}, {'cable': '1'}, {'lift': '1'}, {'parking': '1'}, {'dishwasher': '1'}, {'pool': '1'},  {'internet': '1'}]
+        }
+    },
 }
 </script>

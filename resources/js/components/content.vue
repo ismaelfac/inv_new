@@ -55,9 +55,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="section-title-2 text-center">
-                                <h2>Featured PROPERTY</h2>
-                                <p>Sheltek is the best theme for  elit, sed do eiusmod tempor dolor sit amet, conse ctetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et lorna aliquatd minim veniam, quis nostrud</p>
-                            </div>
+                                <h2>Propiedades Destacadas</h2>
+                             </div>
                         </div>
                     </div>
                     <div class="featured-flat">
