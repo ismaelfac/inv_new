@@ -1,86 +1,67 @@
-import { getLocalUser } from './helpers/auth';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import tasks from './tasks.js'
+Vue.use(Vuex)
 
-const user = getLocalUser();
-export default {
+export default new Vuex.Store({
     state: {
-        loading: false,
-        currentUser: user,
-        isLoggedIn: !!user,
-        auth_error: null,
-        customers: [],
-        countries: []
+        tasks
     },
     getters: {
-        isLoading(state){
-            return state.loading;
-        },
-        isLoggedIn(state){
-            return state.isLoggedIn;
-        },
-        currentUser(state){
-            return state.currentUser;
-        },
-        auth_error(state){
-            return state.auth_error;
-        },
-        customers(state){
-            return state.customers;
-        },
-        countries(state){
-            return state.countries;
-        },
+        findTask(state) {
+            return function (id){
+         		let task = state.tasks.find(task => task.id == id)
+                not_found_unless(task);
+                return task;    
+            }
+        }
     },
     mutations: {
-        login(state){
-            state.loading = true;
-            state.auth_error = null;
+        createTask(state, newTask){
+            state.tasks.push(newTask)
         },
-        loginSuccess(state, payload){
-            state.auth_error = null;
-            state.isLoggedIn = true;
-            state.loading = false;
-            state.currentUser = Object.assign({}, payload.user, {token: payload.access_token});
-            localStorage.setItem("user", JSON.stringify(state.currentUser));
+        toggleTask(state, task) {
+            task.pending = !task.pending;
         },
-        loginFailed(state, payload){
-            state.loading = false;
-            state.auth_error = payload.error;
+        updateTask(state, {id, draft}){
+            let index = state.tasks.findIndex(task => task.id == id);
+            state.tasks.splice(index, 1, draft)
         },
-        logout(state){
-            localStorage.removeItem("user");
-            state.isLoading = false;
-            state.currentUser = null;
+        deleteTask(state, id) {
+            let index = state.tasks.findIndex(task => task.id == id);  
+            state.tasks.splice(index, 1);
         },
-        updateCustomers(state, payload){
-            state.customers = payload;
-
-        },
-        updateCountries(state, payload){
-            state.countries = payload;
-
+        deleteCompletedTasks(state) {
+            state.tasks = state.tasks.filter(task => task.pending);
         }
     },
-    actions:{
-        login(context){
-            context.commit("login");
+    actions: {
+        createTask(context,{ title, description }) {
+            return new Promise((resolve, reject) => {
+                let newTask = {
+                    id: context.state.tasks.length + 1,
+                    title,
+                    description,
+                    pending: true
+                }    
+                context.commit('createTask', newTask)
+                resolve(newTask)
+            })            
         },
-        getCustomers(context){
-            axios.get('/api/customers', {
-                headers:{
-                    "Authorization": `Bearer ${context.state.currentUser.token}`
-                }
-            }).then((response) => {
-                context.commit('updateCustomers', response.data.customers.data);
-            })
+        updateTask(context, payload) {
+            context.commit('updateTask', payload)
         },
-        getCountries(context){
-            axios.get('/api/getCountries', {
-                headers:{
-                    "Authorization": `Bearer ${context.state.currentUser.token}`
-                }
-            }).then((response) => {
-                context.commit('updateCountries', response.data.countries.data);
-            })
+        toggleTask(context, task){
+            context.commit('toggleTask', task)
+        },
+        deleteTask(context, id){
+            context.commit('deleteTask', id)
+        },
+        deleteCompletedTasks(context){
+            context.commit('deleteCompletedTasks')
         }
     }
-};
+})
+
+
+
