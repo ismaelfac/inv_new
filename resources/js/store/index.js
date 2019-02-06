@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+<<<<<<< HEAD
         tasks,
         properties
+=======
+        tasks
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
     },
     getters: {
         findTask(state) {
@@ -15,6 +19,7 @@ export default new Vuex.Store({
                 not_found_unless(task);
                 return task;    
             }
+<<<<<<< HEAD
         },
         findProperty(state) {
             return function (id){
@@ -23,11 +28,15 @@ export default new Vuex.Store({
                 return property;    
             }
         },
+=======
+        }
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
     },
     mutations: {
         createTask(state, newTask){
             state.tasks.push(newTask)
         },
+<<<<<<< HEAD
         createProperty(state, newProperty){
             state.properties.push(newProperty)
         },
@@ -37,18 +46,27 @@ export default new Vuex.Store({
         toggleProperty(state, property) {
             property.pending = !property.pending;
         },
+=======
+        toggleTask(state, task) {
+            task.pending = !task.pending;
+        },
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
         updateTask(state, {id, draft}){
             let index = state.tasks.findIndex(task => task.id == id);
             state.tasks.splice(index, 1, draft)
         },
+<<<<<<< HEAD
         updateProperty(state, {id, draft_property}){
             let index = state.properties.findIndex(property => property.id == id);
             state.properties.splice(index, 1, draft_property)
         },
+=======
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
         deleteTask(state, id) {
             let index = state.tasks.findIndex(task => task.id == id);  
             state.tasks.splice(index, 1);
         },
+<<<<<<< HEAD
         deleteProperty(state, id) {
             let index = state.properties.findIndex(property => property.id == id);  
             state.properties.splice(index, 1);
@@ -58,6 +76,10 @@ export default new Vuex.Store({
         },
         deleteCompletedProperties(state) {
             state.properties = state.properties.filter(property => property.pending);
+=======
+        deleteCompletedTasks(state) {
+            state.tasks = state.tasks.filter(task => task.pending);
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
         }
     },
     actions: {
@@ -73,6 +95,7 @@ export default new Vuex.Store({
                 resolve(newTask)
             })            
         },
+<<<<<<< HEAD
         createProperty(context,{ title, description }) {
             return new Promise((resolve, reject) => {
                 let newProperty = {
@@ -108,6 +131,19 @@ export default new Vuex.Store({
         },
         deleteCompletedProperties(context){
             context.commit('deleteCompletedProperties')
+=======
+        updateTask(context, payload) {
+            context.commit('updateTask', payload)
+        },
+        toggleTask(context, task){
+            context.commit('toggleTask', task)
+        },
+        deleteTask(context, id){
+            context.commit('deleteTask', id)
+        },
+        deleteCompletedTasks(context){
+            context.commit('deleteCompletedTasks')
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
         }
     }
 })

@@ -1,8 +1,14 @@
 <template>
 	<div class="row">
+<<<<<<< HEAD
         <div class="col-xs-6 col-md-6">
             <div class="top">
                 <h2>Tareas</h2>
+=======
+        <div class="col-xs-6 col-md-6 mt-60">
+            <div class="top">
+                <h2>Comentarios</h2>
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
                 <router-link :to="{ name: 'tasks.create' }">Nueva tarea</router-link>
             </div>
 
@@ -37,6 +43,7 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style lang="scss">
     .top {
         display: flex;
@@ -49,6 +56,8 @@ export default {
     }
 </style>
 
+=======
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
 
 
 

@@ -72,12 +72,12 @@
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="characteristics">
                                 <div class="container">
-                                    <characteristics :conditions="conditions" :amenities="amenities"></characteristics>
+                                    <characteristics :conditions="conditions" :amenities="amenities" :current_user="current_user"></characteristics>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="profile">
                                 <div class="container">
-                                    <comments></comments>
+                                    <comments :comments="comments" :current_user="current_user"></comments>
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="messages">3</div>
@@ -191,7 +191,7 @@
                         </aside>
                         <!-- widget-featured-property -->
                         <aside class="widget widget-featured-property">
-                            <h5>Featured Property</h5>
+                            <h5>Propiedades recomendadas</h5>
                             <div class="row">
                                 <!-- flat-item -->
                                 <div class="col-md-12 col-sm-6 col-xs-12">
@@ -296,13 +296,8 @@
                         </aside>
                         <!-- widget-video -->
                         <aside class="widget widget-video">
-                            <h5>Take A Look</h5>
-                            <div class="properties-video">
-                                <div class="embed-responsive embed-responsive-16by9">
-                                    <!-- <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/40934652"></iframe> -->
-                                    <iframe src="https://player.vimeo.com/video/117765418?title=0&byline=0&portrait=0" allowfullscreen></iframe>
-                                </div>
-                            </div>
+                            <h5>Categorias</h5>
+                            
                         </aside>
                     </div>
                 </div>
@@ -325,8 +320,14 @@ export default {
     },
     data() {
         return {
-            conditions:[{'area_total': '470'}, {'built_area': '470'}, {'bathroom': '470'}, {'bedroom': '4'}, {'garage': '1'}, {'kitchen': '1'}, {'floor': '4'}, {'stratum': '3'}],
-            amenities:[{'air_conditioning': '1'}, {'balcony': '1'}, {'cable': '1'}, {'lift': '1'}, {'parking': '1'}, {'dishwasher': '1'}, {'pool': '1'},  {'internet': '1'}]
+            current_user:'1',
+            comments: [
+                { 'id': '1', 'user_id': '2', 'img': '/website/images/avatar/1.jpg', 'full_name': 'Eliana Robles', 'description': 'El Inmueble me parece excelente', 'time': '6 horas' },
+                { 'id': '2', 'user_id': '3', 'img': '/website/images/avatar/1.jpg', 'full_name': 'Ismael Lastre', 'description': 'El Inmueble me parece excelente', 'time': '2 Dias' },
+                { 'id': '3', 'user_id': '4', 'img': '/website/images/avatar/1.jpg', 'full_name': 'Mildred', 'description': 'El Inmueble me parece excelente', 'time': '6 horas' }
+            ],
+            conditions:{'area_total': '470','area_total': '470', 'built_area': '400', 'bathroom': '3', 'bedroom': '2', 'garage': '1', 'kitchen': '1', 'floor': '4', 'stratum': '3', 'antiquity': '5'},
+            amenities:{'air_conditioning': '1', 'balcony': '1', 'cable': '1', 'lift': '1', 'parking': '1', 'dishwasher': '1', 'pool': '1', 'internet': '1'}
         }
     },
 }

@@ -2,11 +2,19 @@ import Login from "./components/auth/login.vue";
 import Content from './components/content.vue'
 import About from './components/website/about.vue'
 import DetailsProperty from './components/properties_client/Details.vue'
+<<<<<<< HEAD
 //
+=======
+
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
 import TaskList from './components/comments/List.vue'
 import TaskEdit from './components/comments/Edit.vue'
 import TaskCreate from './components/comments/Create.vue'
 import TaskDetails from './components/comments/Details.vue'
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
 export const routes=[
     {
         path: '/',
@@ -56,5 +64,9 @@ export const routes=[
                 props: true
             }
         ]
+<<<<<<< HEAD
     }
+=======
+    },
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
 ]

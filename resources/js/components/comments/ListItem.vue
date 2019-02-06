@@ -39,6 +39,7 @@ export default {
 }
 </script>
 
+<<<<<<< HEAD
 <style lang="scss">
     .list-group-item.task-list-item {
         display: flex;
@@ -69,6 +70,8 @@ export default {
     }
 </style>
 
+=======
+>>>>>>> 2606621664cb76ab783da1dddc55bd575ef271ea
 
 
 
