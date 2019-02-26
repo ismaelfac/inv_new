@@ -1,12 +1,14 @@
 <?php
 
 use Faker\Generator as Faker;
-
-$factory->define(App\Post::class, function (Faker\Generator $faker) {
+use \App\Post;
+$factory->define(Post::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence,
-        'content' => $faker->paragraph,
+        'slug' => 'Title',
+       'content' => $faker->paragraph,
         'pending' => true,
+        'score' => 1,
         'user_id' => function () {
             return factory(\App\User::class)->create()->id;
         },

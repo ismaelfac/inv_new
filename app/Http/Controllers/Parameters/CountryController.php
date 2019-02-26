@@ -11,7 +11,7 @@ class CountryController extends Controller
     public function index()
     {
         $countries = Country::paginate(5);
-        return view('admin2.parameters.countries.index', compact('countries'));
+        return response()->json($countries, 200);
     }
     /**
      * Show the form for creating a new resource.
