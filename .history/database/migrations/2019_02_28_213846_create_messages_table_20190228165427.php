@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRegisterPanelsTable extends Migration
+class CreateMessagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateRegisterPanelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('register_panels', function (Blueprint $table) {
+        Schema::create('messages', function (Blueprint $table) {
             $table->increments('id');
+            $table->enum('message_type',['warning', 'success','info','danger']);
             $table->unsignedInteger('rol_id');//Verifico el tipo de rol - Panel acepta multi-roles.
             $table->foreign('rol_id')->references('id')->on('role_user')->onUpdate('cascade');
-            $table->double('message_count');//calcula la cantidad de mensajes del usuario segun su rol.
-            $table->double('recommended_properties_count');//calcula la cantidad de propiedades recomendadas para el usuario segun su rol.
-            $table->double('ads_count');//calcula la cantidad de anuncios del usuario segun su rol.
-            $table->double('properties_count');//.
+            $table->boolean('is_read')->default(false);
+            $table->mediumText('description',220);
+            $table->string('img_message')->default('../img');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -33,6 +33,6 @@ class CreateRegisterPanelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('register_panels');
+        Schema::dropIfExists('messages');
     }
 }

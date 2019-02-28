@@ -22,7 +22,6 @@ class CreateRegisterPanelsTable extends Migration
             $table->double('ads_count');//calcula la cantidad de anuncios del usuario segun su rol.
             $table->double('properties_count');//.
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
