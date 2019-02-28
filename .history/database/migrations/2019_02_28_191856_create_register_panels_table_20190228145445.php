@@ -17,10 +17,8 @@ class CreateRegisterPanelsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('rol_id');//Verifico el tipo de rol - Panel acepta multi-roles.
             $table->foreign('rol_id')->references('id')->on('role_user')->onUpdate('cascade');
-            $table->double('message_count');//.
-            $table->double('recommended_properties_count');//.
-            $table->double('ads_count');//.
-            $table->double('properties_count');//.
+            $table->unsignedInteger('rol_id');//.
+            $table->foreign('rol_id')->references('id')->on('role_user')->onUpdate('cascade');
             $table->timestamps();
         });
     }
