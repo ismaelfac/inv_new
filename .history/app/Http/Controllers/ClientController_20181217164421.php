@@ -2,19 +2,39 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Caffeinated\Shinobi\Models\Role;
-use App\Customer;
+use App\Client;
 
 class ClientController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
+
+    }
+    public function getClients()
+    {
+        $clients = Client::getClientsAttribute('web');
+        return response()->json($clients);
     }
 
     public function index()
     {
-        $clients = Customer::getcustomersAttribute();
-        return response()->json($clients);
+        //$clients = Client::orderBy('updated_at', 'DESC')->paginate(3);
+        $clients = Client::getClientsAttribute('web');
+        //dd($clients);
+        return view('admin2.modules.clients.index', compact('clients'));
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin2.modules.clients.create');
     }
 
     /**
@@ -23,9 +43,9 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Customer $client)
+    public function store(Request $request, Client $client)
     {
-        $client = Customer::create($request::all());
+        $client = Client::create($request::all());
         $client->roles()->sync($request->get('roles')); //update roles
         return redirect()->route('clients.edit', $client->id)->with('info', 'Usuario Guardado con Exito');
     }
@@ -36,7 +56,7 @@ class ClientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Customer $client)
+    public function show(Client $client)
     {
         return view('admin2.modules.clients.show', compact('client'));
     }

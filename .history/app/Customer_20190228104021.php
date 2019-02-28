@@ -17,6 +17,7 @@ class Customer extends Model
 
     protected $table = 'customers';
     protected $fillable = ['customer_wasi_id', 'user_id', 'user_wasi_id', 'first_name', 'last_name', 'slug', 'dni', 'type_dni', 'phone', 'landline', 'email', 'address', 'country_id', 'departament_id', 'municipality_id', 'location_id', 'neighborhood_id', 'latitude', 'longitude', 'birthdate', 'state_customer'];
+    public $incrementing = false;
     protected $casts = [
         'created_at' => 'datetime:Y-m-d',
     ];
@@ -54,7 +55,7 @@ class Customer extends Model
 
     public static function getcustomersAttribute()
     {
-        $customers = Customer::query()->with('identification', 'country', 'departament', 'location', 'neighborhood')->paginate(5);
+        $customers = Customer::query()->with('country', 'departament', 'location', 'neighborhood')->paginate(5);
         return $customers;
     }
 

@@ -13,8 +13,17 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = Customer::getcustomersAttribute();
+        $clients = Customer::getClientsAttribute('web');
         return response()->json($clients);
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        return view('admin2.modules.clients.create');
     }
 
     /**

@@ -46,7 +46,6 @@ class CreateCustomersTable extends Migration
                   $table->dateTime('created_at_wasi');
                   $table->dateTime('updated_at_wasi');
                   $table->timestamps();
-                  $table->softDeletes();
             });
       }
 

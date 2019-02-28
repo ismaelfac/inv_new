@@ -14,13 +14,15 @@ use Carbon\Carbon as Carbon;
 
 class Customer extends Model
 {
+    use SoftDeletes;
 
     protected $table = 'customers';
     protected $fillable = ['customer_wasi_id', 'user_id', 'user_wasi_id', 'first_name', 'last_name', 'slug', 'dni', 'type_dni', 'phone', 'landline', 'email', 'address', 'country_id', 'departament_id', 'municipality_id', 'location_id', 'neighborhood_id', 'latitude', 'longitude', 'birthdate', 'state_customer'];
+    public $incrementing = false;
     protected $casts = [
         'created_at' => 'datetime:Y-m-d',
     ];
- 
+
     public function properties()
     {
         return $this->belongToMany(Property::class)->using(CustomerRol::class);

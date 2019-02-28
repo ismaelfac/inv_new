@@ -17,6 +17,7 @@ class Customer extends Model
 
     protected $table = 'customers';
     protected $fillable = ['customer_wasi_id', 'user_id', 'user_wasi_id', 'first_name', 'last_name', 'slug', 'dni', 'type_dni', 'phone', 'landline', 'email', 'address', 'country_id', 'departament_id', 'municipality_id', 'location_id', 'neighborhood_id', 'latitude', 'longitude', 'birthdate', 'state_customer'];
+    public $incrementing = false;
     protected $casts = [
         'created_at' => 'datetime:Y-m-d',
     ];
@@ -47,7 +48,7 @@ class Customer extends Model
     }
     public function identification()
     {
-        return $this->hasOne(Identification::class, 'type_dni');
+        return $this->hasOne(Identification::class);
     }
     //public function getCreatedAtAttribute($date) { return Carbon::createFromFormat('Ymd H:i:s', $date)->format('Ym-d'); } 
     //public function getUpdatedAtAttribute($date) { return Carbon::createFromFormat('Ymd H:i:s', $date)->format('Ym-d'); } 
