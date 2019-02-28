@@ -16,7 +16,7 @@ class Message extends Model
 
     public function rolUser()
     {
-        
+        return $this->hasMany();
     }
 
 }

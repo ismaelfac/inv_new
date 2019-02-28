@@ -14,9 +14,6 @@ class Message extends Model
     protected $casts = ['is_read' => 'boolean'];
     protected $dates = ['deleted_at'];
 
-    public function rolUser()
-    {
-        
-    }
+
 
 }

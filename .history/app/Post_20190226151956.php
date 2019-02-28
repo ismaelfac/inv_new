@@ -9,6 +9,7 @@ class Post extends Model
     use CanBeVoted;
 
     protected $fillable = ['user_id','title','content','pending'];
+
     protected $casts = ['pending' => 'boolean'];
 
     public function user()
