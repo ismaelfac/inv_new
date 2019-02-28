@@ -20,9 +20,7 @@ class CreateAdsTable extends Migration
             $table->string('title');//Titulo del anuncio
             $table->mediumText('description',220);//descripcion del anuncio.
             $table->enum('state_ad',['Sin Calificar','Descalificado','Cancelado por Usuario', 'Retirado', 'Activo'])->default('Sin Calificar');
-            $table->enum('ad_type',['Buscar','Ofertar','Invertir'])->default('Ofertar'); //Define el tipo de anuncio que el usuario quiere crear.
-            $table->mediumText('observations_ad')->nullable();//Observaciones del anuncio
-            $table->boolean('is_private')->default(false); //Si el emisor del anuncio quiere que el anuncio solo sea para la empresa.
+            $table->mediumText('observations_ad')->nullable();//Onservaciones del anuncio
             $table->timestamps();
             $table->softDeletes();
         });
