@@ -9,7 +9,7 @@ Route::group(['prefix' => 'auth'], function ($router) {
     Route::post('me', 'AuthController@me');
 });
 Route::group(['middleware' => 'jwt.auth', 'cors'], function ($router) {
-    Route::resource('panelclient', 'RegisterPanelController');
+    Route::resource('PanelClient', 'RegisterPanelController');
     Route::resource('posts', 'PostController');
     Route::resource('countries', 'Parameters\CountryController');
     Route::resource('clients', 'ClientController');

@@ -28,8 +28,4 @@ class RegisterPanel extends Model
     {
         return $this->belongsToMany(AdFavorite::class);
     }
-    public static function getSessionClient()
-    {
-        return self::getPermissionsInModel('Panel');
-    }
 }

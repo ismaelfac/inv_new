@@ -19,8 +19,7 @@ class CreateMessagesTable extends Migration
             $table->unsignedInteger('rol_id_receiver');//Verifico el tipo de rol - Panel acepta multi-roles.
             $table->foreign('rol_id_receiver')->references('id')->on('role_user')->onUpdate('cascade');
             $table->boolean('is_read')->default(false); //Establece si el mensaje fue leido.
-            $table->string('title'); //Titulo del mensaje
-            $table->mediumText('description',220); //Descripción del mensaje lanzado por el sistema o por roles administradores.
+            $table->mediumText('description',220);//Descripción del mensaje lanzado por el sistema o por roles administradores.
             $table->string('img_message')->default('../img');
             $table->timestamps();
             $table->softDeletes();

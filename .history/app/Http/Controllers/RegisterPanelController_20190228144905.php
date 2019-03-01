@@ -14,8 +14,7 @@ class RegisterPanelController extends Controller
      */
     public function index()
     {
-        $sessionClient = RegisterPanel::getSessionClient();
-        dd($sessionClient);
+        //
     }
 
     /**

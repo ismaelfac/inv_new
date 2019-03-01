@@ -30,6 +30,6 @@ class RegisterPanel extends Model
     }
     public static function getSessionClient()
     {
-        return self::getPermissionsInModel('Panel');
+        return response()->json('prueba');
     }
 }
