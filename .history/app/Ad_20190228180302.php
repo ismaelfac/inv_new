@@ -12,5 +12,5 @@ class Ad extends Model
     protected $casts = ['is_private' => 'boolean'];
     protected $dates = ['deleted_at'];
 
-    
+
 }

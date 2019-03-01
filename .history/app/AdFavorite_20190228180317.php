@@ -9,7 +9,7 @@ class AdFavorite extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = ['rol_id_receiver', 'ad_id', 'state_ad'];
-    protected $casts = ['state_ad' => 'boolean'];
+    protected $fillable = ['rol_id_transmitter', 'title', 'description', 'state_ad', 'ad_type', 'observations_ad', 'is_private'];
+    protected $casts = ['is_private' => 'boolean'];
     protected $dates = ['deleted_at'];
 }
