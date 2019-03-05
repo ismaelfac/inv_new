@@ -30,10 +30,6 @@ class RegisterPanel extends Model
     }
     public static function getSessionClient($model)
     {
-        //obtengo los permisos
-        $permissions = self::getPermissionsInModel($model);
-        //cargo los datos del panel de clientes, según el rol que este tiene.
-        
-
+        return self::getPermissionsInModel($model);
     }
 }

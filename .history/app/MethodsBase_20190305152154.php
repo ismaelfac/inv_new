@@ -48,9 +48,9 @@ trait MethodsBase
     public static function getPermissionsInModel(String $model)
     {
         $rol = Auth::user()->roles()->where('active', 1)->pluck('role_id');
+        dd('Este es el rol: '.$rol);
         if($rol[0] === 1){
             $permission = Permission::where('slug', 'like', $model.'%')->pluck('slug');
-            dd($permission);
             return $permission->map(function($item, $key){ return explode(".",$item)[1];});    
         }elseif($rol[0] === 2){
             return null;    

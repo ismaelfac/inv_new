@@ -31,8 +31,7 @@ class DatabaseSeeder extends Seeder
             'identifications',
             'features',
             'properties',
-            'feature_property',
-            'register_panels'
+            'feature_property'
         ]);
         $this->call([
             PermissionsTableSeeder::class,
@@ -55,8 +54,7 @@ class DatabaseSeeder extends Seeder
             CategoryTableSeeder::class,
             PropertiesTableSeeder::class,
             CustomersTableSeeder::class,
-            CommentTableSeeder::class,
-            RegisterPanelTableSeeder::class
+            CommentTableSeeder::class
         ]);
     }
     protected function truncateTables(array $tables)

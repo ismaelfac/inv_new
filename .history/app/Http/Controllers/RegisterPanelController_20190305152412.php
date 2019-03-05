@@ -12,9 +12,9 @@ class RegisterPanelController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($model)
     {
-        $sessionClient = RegisterPanel::getSessionClient('parameters');
+        $sessionClient = RegisterPanel::getSessionClient($model);
         dd($sessionClient);
     }
 
