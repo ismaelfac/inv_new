@@ -10,7 +10,7 @@
     "name": "Panel",
     "slug": "parameters",
     "description": "Ver el panel",
-    "variant": null,
+    "variant": "success",
     "is_system": 1
   },
   {

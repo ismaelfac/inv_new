@@ -14,6 +14,7 @@ class TypeClientTableSeeder extends Seeder
     public function run()
     {
         $data = PropertiesWasiController::getDataWasi('client-type/all');
+        dd($data);
         $lengthClientType = sizeof($data);
         for ($i = 0; $i <= $lengthClientType - 2; $i++) {
             error_reporting(0);
