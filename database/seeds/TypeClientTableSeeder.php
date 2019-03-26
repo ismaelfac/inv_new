@@ -13,12 +13,16 @@ class TypeClientTableSeeder extends Seeder
      */
     public function run()
     {
-        $data = PropertiesWasiController::getDataWasi('client-type/all');
-        dd($data);
-        $lengthClientType = sizeof($data);
-        for ($i = 0; $i <= $lengthClientType - 2; $i++) {
-            error_reporting(0);
-            TypeClient::firstOrCreate(['id_client_type' => $data[$i]['id_client_type'], 'name' => $data[$i]['name']]);
+        try {
+            $data = PropertiesWasiController::getDataWasi('client-type/all');
+            $lengthClientType = sizeof($data);
+            for ($i = 0; $i <= $lengthClientType - 2; $i++) {
+                error_reporting(0);
+                TypeClient::firstOrCreate(['id_client_type' => $data[$i]['id_client_type'], 'name' => $data[$i]['name']]);
+            }   
+        } catch (Exception $e) {
+            console.log('No se puedo conectar al api de getDataWasi')
         }
+        
     }
 }
