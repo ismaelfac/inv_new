@@ -13,8 +13,6 @@ class UserTableSeeder extends Seeder
      */
     public function run()
     {
-        try {
-            DB::beginTransaction();
             Role::create([
                 'name' => 'Administrador',
                 'slug' => 'administrador',
@@ -49,23 +47,20 @@ class UserTableSeeder extends Seeder
             ]);
             $user->roles()->sync([1 => ['active' => true]]); //update roles
             $user = User::create([
-                'name' => 'LILIA FERNANDEZ',
-                'email' => 'cartera@aliadosinmobiliariossa.com',
-                'password' => bcrypt('Lfernandez'),
+                'name' => 'ELIANA ROBLES',
+                'email' => 'directora@inversionesyproyectos.com',
+                'password' => bcrypt('Erobles'),
                 'active' => true
             ]);
             $user->roles()->sync([1 => ['active' => true]]); //update roles
             $user = User::create([
-                'name' => 'MARY FERNANDEZ',
-                'email' => 'auxcartera@aliadosinmobiliariossa.com',
-                'password' => bcrypt('BrwQ12-123'),
+                'name' => 'Mildred Gutierrez ',
+                'email' => 'asistentecomercial@inversionesyproyectos.com',
+                'password' => bcrypt('Mgutierrez'),
                 'active' => true
             ]);
             $user->roles()->sync([3 => ['active' => true],4]); //update roles 3, 4 en usuario3
-            DB::commit();
-        } catch (\Throwable $th) {
-            DB::rollBack();
-        }
+        
 
     }
 }

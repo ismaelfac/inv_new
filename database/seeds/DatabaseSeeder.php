@@ -18,7 +18,6 @@ class DatabaseSeeder extends Seeder
             'customer_roles',
             'customers',
             'type_clients',
-            'users',
             'posts',
             'identifications',
             'neighborhoods',

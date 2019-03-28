@@ -40,6 +40,7 @@ class HttpRequestsProvider extends ServiceProvider
 		if (Cache::get($url.http_build_query($options)) == null) {
             $client = new Client();
             $body = $this->validateOptions($options);
+            //dd($body);
             $response = $client->request('POST',
                 $this->apiUrl . $url,
                 [
